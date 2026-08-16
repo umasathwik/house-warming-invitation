@@ -5,8 +5,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Cholleti Family | Gruhapravesham</title>
 
@@ -14,9 +13,9 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
-/* =========================================================
-   BASIC RESET
-========================================================= */
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
     margin:0;
@@ -24,14 +23,14 @@ content="width=device-width, initial-scale=1.0">
     box-sizing:border-box;
 }
 
-html,body{
+html,
+body{
     width:100%;
     height:100%;
     overflow:hidden;
 }
 
 body{
-
     font-family:
     Georgia,
     "Times New Roman",
@@ -43,9 +42,9 @@ body{
 }
 
 
-/* =========================================================
-   CINEMATIC BACKGROUND
-========================================================= */
+/* =====================================================
+   MAIN CINEMATIC BACKGROUND
+===================================================== */
 
 .stage{
 
@@ -74,10 +73,6 @@ body{
     );
 }
 
-
-/* =========================================================
-   GOLDEN LIGHT
-========================================================= */
 
 .stage::before{
 
@@ -108,30 +103,37 @@ body{
 
     animation:
     lightPulse
-    4s ease-in-out infinite;
+    4s
+    ease-in-out
+    infinite;
 }
+
 
 @keyframes lightPulse{
 
     0%,100%{
+
         transform:
         translate(-50%,-50%)
         scale(.9);
+
         opacity:.6;
     }
 
     50%{
+
         transform:
         translate(-50%,-50%)
         scale(1.15);
+
         opacity:1;
     }
 }
 
 
-/* =========================================================
-   PARTICLES
-========================================================= */
+/* =====================================================
+   FLOATING PARTICLES
+===================================================== */
 
 .particle{
 
@@ -152,14 +154,18 @@ body{
     opacity:.7;
 
     animation:
-    rise linear infinite;
+    rise
+    linear
+    infinite;
 
     pointer-events:none;
 }
 
+
 @keyframes rise{
 
     0%{
+
         transform:
         translateY(0)
         translateX(0)
@@ -177,6 +183,7 @@ body{
     }
 
     100%{
+
         transform:
         translateY(-115vh)
         translateX(80px)
@@ -187,9 +194,9 @@ body{
 }
 
 
-/* =========================================================
+/* =====================================================
    FLOWERS
-========================================================= */
+===================================================== */
 
 .flower{
 
@@ -203,18 +210,23 @@ body{
 
     animation:
     flowerFloat
-    7s ease-in-out infinite;
+    7s
+    ease-in-out
+    infinite;
 }
+
 
 @keyframes flowerFloat{
 
     0%,100%{
+
         transform:
         translateY(0)
         rotate(0deg);
     }
 
     50%{
+
         transform:
         translateY(-25px)
         rotate(15deg);
@@ -222,9 +234,9 @@ body{
 }
 
 
-/* =========================================================
+/* =====================================================
    SCREENS
-========================================================= */
+===================================================== */
 
 .screen{
 
@@ -255,7 +267,8 @@ body{
 
     opacity .9s ease,
 
-    transform 1s cubic-bezier(
+    transform 1s
+    cubic-bezier(
         .22,
         .61,
         .36,
@@ -266,6 +279,7 @@ body{
 
     z-index:5;
 }
+
 
 .screen.active{
 
@@ -280,6 +294,7 @@ body{
     z-index:10;
 }
 
+
 .screen-content{
 
     width:100%;
@@ -292,8 +307,10 @@ body{
 
     animation:
     contentIn
-    1s ease;
+    1s
+    ease;
 }
+
 
 @keyframes contentIn{
 
@@ -315,9 +332,9 @@ body{
 }
 
 
-/* =========================================================
+/* =====================================================
    DIYA
-========================================================= */
+===================================================== */
 
 .diya{
 
@@ -343,9 +360,11 @@ body{
     infinite alternate;
 }
 
+
 @keyframes diyaGlow{
 
     from{
+
         filter:
         drop-shadow(
             0 0 8px
@@ -354,6 +373,7 @@ body{
     }
 
     to{
+
         filter:
         drop-shadow(
             0 0 35px
@@ -363,9 +383,9 @@ body{
 }
 
 
-/* =========================================================
-   TYPOGRAPHY
-========================================================= */
+/* =====================================================
+   TEXT
+===================================================== */
 
 .kicker{
 
@@ -373,16 +393,15 @@ body{
 
     font-size:14px;
 
-    letter-spacing:
-    4px;
+    letter-spacing:4px;
 
-    text-transform:
-    uppercase;
+    text-transform:uppercase;
 
     color:#f4c96b;
 
     margin-bottom:20px;
 }
+
 
 h1{
 
@@ -404,6 +423,7 @@ h1{
     margin-bottom:20px;
 }
 
+
 h2{
 
     font-size:
@@ -418,6 +438,7 @@ h2{
     margin-bottom:20px;
 }
 
+
 h3{
 
     font-size:30px;
@@ -426,6 +447,7 @@ h3{
 
     margin-bottom:15px;
 }
+
 
 .subtitle{
 
@@ -441,17 +463,10 @@ h3{
     color:#fff1d2;
 }
 
-.gold{
 
-    color:#ffd477;
-
-    font-weight:bold;
-}
-
-
-/* =========================================================
+/* =====================================================
    ORNAMENT
-========================================================= */
+===================================================== */
 
 .ornament{
 
@@ -465,6 +480,7 @@ h3{
 
     margin:25px 0;
 }
+
 
 .ornament span{
 
@@ -486,6 +502,7 @@ h3{
     );
 }
 
+
 .ornament b{
 
     color:#ffd477;
@@ -494,9 +511,9 @@ h3{
 }
 
 
-/* =========================================================
+/* =====================================================
    BUTTONS
-========================================================= */
+===================================================== */
 
 .btn{
 
@@ -530,12 +547,14 @@ h3{
     margin:7px;
 }
 
+
 .btn:hover{
 
     transform:
     translateY(-3px)
     scale(1.02);
 }
+
 
 .primary{
 
@@ -553,6 +572,7 @@ h3{
     rgba(255,190,60,.25);
 }
 
+
 .secondary{
 
     background:
@@ -565,6 +585,7 @@ h3{
     rgba(255,220,140,.45);
 }
 
+
 .maps{
 
     background:#fff;
@@ -572,12 +593,14 @@ h3{
     color:#5d2e00;
 }
 
+
 .call{
 
     background:#24a148;
 
     color:#fff;
 }
+
 
 .whatsapp{
 
@@ -587,9 +610,9 @@ h3{
 }
 
 
-/* =========================================================
-   SCREEN 1
-========================================================= */
+/* =====================================================
+   FAMILY NAME
+===================================================== */
 
 .family-name{
 
@@ -610,16 +633,17 @@ h3{
 }
 
 
-/* =========================================================
-   SCREEN 2
-========================================================= */
+/* =====================================================
+   GRUHAPRAVESHAM
+===================================================== */
 
-.griha-symbol{
+.gruhapravesham-symbol{
 
     font-size:65px;
 
     margin-bottom:15px;
 }
+
 
 .date-line{
 
@@ -635,9 +659,9 @@ h3{
 }
 
 
-/* =========================================================
-   EVENT CARD
-========================================================= */
+/* =====================================================
+   EVENT DETAILS
+===================================================== */
 
 .event-grid{
 
@@ -651,9 +675,11 @@ h3{
     margin-top:25px;
 }
 
+
 .event-card{
 
-    padding:25px 15px;
+    padding:
+    25px 15px;
 
     background:
     rgba(255,255,255,.09);
@@ -672,12 +698,14 @@ h3{
     rgba(0,0,0,.2);
 }
 
+
 .event-icon{
 
     font-size:45px;
 
     margin-bottom:12px;
 }
+
 
 .event-card strong{
 
@@ -692,6 +720,7 @@ h3{
     margin-bottom:7px;
 }
 
+
 .event-card span{
 
     color:#edcc8b;
@@ -702,9 +731,9 @@ h3{
 }
 
 
-/* =========================================================
+/* =====================================================
    COUNTDOWN
-========================================================= */
+===================================================== */
 
 .countdown-title{
 
@@ -721,6 +750,7 @@ h3{
     color:#eac06b;
 }
 
+
 .countdown{
 
     display:flex;
@@ -733,6 +763,7 @@ h3{
 
     margin-top:15px;
 }
+
 
 .count-box{
 
@@ -751,6 +782,7 @@ h3{
     rgba(255,220,150,.25);
 }
 
+
 .count-box strong{
 
     display:block;
@@ -761,6 +793,7 @@ h3{
 
     color:#fff1c9;
 }
+
 
 .count-box span{
 
@@ -774,9 +807,9 @@ h3{
 }
 
 
-/* =========================================================
+/* =====================================================
    LOCATION
-========================================================= */
+===================================================== */
 
 .location-box{
 
@@ -800,12 +833,14 @@ h3{
     blur(10px);
 }
 
+
 .location-icon{
 
     font-size:60px;
 
     margin-bottom:10px;
 }
+
 
 .address{
 
@@ -817,13 +852,14 @@ h3{
 
     color:#ffeaca;
 
-    margin:15px auto 22px;
+    margin:
+    15px auto 22px;
 }
 
 
-/* =========================================================
-   MESSAGE
-========================================================= */
+/* =====================================================
+   INVITATION MESSAGE
+===================================================== */
 
 .message{
 
@@ -843,6 +879,7 @@ h3{
     color:#fff0d0;
 }
 
+
 .signature{
 
     margin-top:28px;
@@ -855,9 +892,9 @@ h3{
 }
 
 
-/* =========================================================
+/* =====================================================
    CONTACT
-========================================================= */
+===================================================== */
 
 .contact-grid{
 
@@ -873,9 +910,11 @@ h3{
     margin:auto;
 }
 
+
 .contact-card{
 
-    padding:30px 15px;
+    padding:
+    30px 15px;
 
     border-radius:25px;
 
@@ -890,6 +929,7 @@ h3{
     blur(8px);
 }
 
+
 .contact-icon{
 
     font-size:45px;
@@ -897,12 +937,14 @@ h3{
     margin-bottom:10px;
 }
 
+
 .contact-card h3{
 
     font-size:24px;
 
     color:#ffe1a0;
 }
+
 
 .contact-card p{
 
@@ -916,9 +958,9 @@ h3{
 }
 
 
-/* =========================================================
+/* =====================================================
    SHARE
-========================================================= */
+===================================================== */
 
 .share-text{
 
@@ -934,9 +976,9 @@ h3{
 }
 
 
-/* =========================================================
+/* =====================================================
    TOP CONTROLS
-========================================================= */
+===================================================== */
 
 .controls{
 
@@ -952,6 +994,7 @@ h3{
 
     gap:8px;
 }
+
 
 .control-btn{
 
@@ -980,16 +1023,16 @@ h3{
     transition:.3s;
 }
 
+
 .control-btn:hover{
 
-    transform:
-    scale(1.08);
+    transform:scale(1.08);
 }
 
 
-/* =========================================================
+/* =====================================================
    SCREEN COUNTER
-========================================================= */
+===================================================== */
 
 .counter{
 
@@ -1011,9 +1054,9 @@ h3{
 }
 
 
-/* =========================================================
+/* =====================================================
    NAVIGATION
-========================================================= */
+===================================================== */
 
 .navigation{
 
@@ -1040,6 +1083,7 @@ h3{
 
     pointer-events:none;
 }
+
 
 .navigation button{
 
@@ -1073,6 +1117,7 @@ h3{
     transition:.3s;
 }
 
+
 .navigation button:hover{
 
     background:
@@ -1081,6 +1126,7 @@ h3{
     transform:
     translateY(-3px);
 }
+
 
 .navigation .next{
 
@@ -1095,16 +1141,15 @@ h3{
 }
 
 
-/* =========================================================
-   PROGRESS
-========================================================= */
+/* =====================================================
+   PROGRESS BAR
+===================================================== */
 
 .progress{
 
     position:fixed;
 
     top:0;
-
     left:0;
 
     height:3px;
@@ -1120,9 +1165,9 @@ h3{
 }
 
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:600px){
 
@@ -1132,35 +1177,43 @@ h3{
         50px 16px 100px;
     }
 
+
     .event-grid{
 
         grid-template-columns:1fr;
     }
+
 
     .contact-grid{
 
         grid-template-columns:1fr;
     }
 
+
     .event-card{
 
-        padding:20px 12px;
+        padding:
+        20px 12px;
     }
+
 
     .count-box{
 
         min-width:70px;
     }
 
+
     .count-box strong{
 
         font-size:22px;
     }
 
+
     .navigation{
 
         bottom:15px;
     }
+
 
     .navigation button{
 
@@ -1170,6 +1223,7 @@ h3{
         font-size:13px;
     }
 
+
     .controls{
 
         top:12px;
@@ -1177,12 +1231,14 @@ h3{
         right:12px;
     }
 
+
     .counter{
 
         top:25px;
 
         left:15px;
     }
+
 
     .address{
 
@@ -1192,9 +1248,9 @@ h3{
 }
 
 
-/* =========================================================
-   VERY SMALL PHONES
-========================================================= */
+/* =====================================================
+   SMALL PHONES
+===================================================== */
 
 @media(max-width:380px){
 
@@ -1205,6 +1261,7 @@ h3{
 
         font-size:12px;
     }
+
 
     .count-box{
 
@@ -1225,11 +1282,11 @@ h3{
 
 
 <!-- =====================================================
-     PARTICLES
+     FLOATING PARTICLES
 ===================================================== -->
 
 <div class="particle"
-style="left:5%;animation-duration:12s;animation-delay:0s;"></div>
+style="left:5%;animation-duration:12s;"></div>
 
 <div class="particle"
 style="left:15%;animation-duration:15s;animation-delay:2s;"></div>
@@ -1254,7 +1311,7 @@ style="left:88%;animation-duration:18s;animation-delay:6s;"></div>
 
 
 <!-- =====================================================
-     FLOWERS
+     FLOATING FLOWERS
 ===================================================== -->
 
 <div class="flower"
@@ -1279,7 +1336,7 @@ style="right:10%;bottom:18%;animation-delay:3s;">
 
 
 <!-- =====================================================
-     PROGRESS
+     PROGRESS BAR
 ===================================================== -->
 
 <div
@@ -1302,7 +1359,7 @@ id="counter">
 
 
 <!-- =====================================================
-     MUSIC
+     BACKGROUND MUSIC
 ===================================================== -->
 
 <audio
@@ -1318,7 +1375,7 @@ type="audio/mpeg">
 
 
 <!-- =====================================================
-     TOP CONTROLS
+     MUSIC BUTTON
 ===================================================== -->
 
 <div class="controls">
@@ -1338,6 +1395,7 @@ title="Music">
 
 <!-- =====================================================
      SCREEN 1
+     CHOLLETI FAMILY
 ===================================================== -->
 
 <section
@@ -1353,12 +1411,16 @@ id="screen1">
 
 
 <div class="kicker">
+
 With the Blessings of God & Elders
+
 </div>
 
 
 <div class="family-name">
+
 Cholleti Family
+
 </div>
 
 
@@ -1398,6 +1460,7 @@ onclick="nextScreen()">
 
 <!-- =====================================================
      SCREEN 2
+     GRUHAPRAVESHAM
 ===================================================== -->
 
 <section
@@ -1407,24 +1470,25 @@ id="screen2">
 <div class="screen-content">
 
 
-<div class="griha-symbol">
+<div class="gruhapravesham-symbol">
+
 🏡
+
 </div>
 
 
 <div class="kicker">
-Auspicious Beginning
+
+An Auspicious Beginning
+
 </div>
 
 
 <h1>
-Gurhapravesham
+
+Gruhapravesham
+
 </h1>
-
-
-<h2>
-& House Warming Ceremony
-</h2>
 
 
 <div class="ornament">
@@ -1462,6 +1526,7 @@ with us.
 
 <!-- =====================================================
      SCREEN 3
+     EVENT DETAILS
 ===================================================== -->
 
 <section
@@ -1472,12 +1537,16 @@ id="screen3">
 
 
 <div class="kicker">
+
 Save The Date
+
 </div>
 
 
 <h2>
+
 Event Details
+
 </h2>
 
 
@@ -1487,15 +1556,21 @@ Event Details
 <div class="event-card">
 
 <div class="event-icon">
+
 📅
+
 </div>
 
 <strong>
+
 Sunday
+
 </strong>
 
 <span>
+
 30 August 2026
+
 </span>
 
 </div>
@@ -1504,15 +1579,21 @@ Sunday
 <div class="event-card">
 
 <div class="event-icon">
+
 ⏰
+
 </div>
 
 <strong>
+
 8:00 AM onwards
+
 </strong>
 
 <span>
-Gurhapravesham Ceremony
+
+Gruhapravesham Ceremony
+
 </span>
 
 </div>
@@ -1522,7 +1603,9 @@ Gurhapravesham Ceremony
 
 
 <div class="countdown-title">
+
 Our Special Day Begins In
+
 </div>
 
 
@@ -1532,11 +1615,15 @@ Our Special Day Begins In
 <div class="count-box">
 
 <strong id="days">
+
 0
+
 </strong>
 
 <span>
+
 Days
+
 </span>
 
 </div>
@@ -1545,11 +1632,15 @@ Days
 <div class="count-box">
 
 <strong id="hours">
+
 0
+
 </strong>
 
 <span>
+
 Hours
+
 </span>
 
 </div>
@@ -1558,11 +1649,15 @@ Hours
 <div class="count-box">
 
 <strong id="minutes">
+
 0
+
 </strong>
 
 <span>
+
 Minutes
+
 </span>
 
 </div>
@@ -1571,11 +1666,15 @@ Minutes
 <div class="count-box">
 
 <strong id="seconds">
+
 0
+
 </strong>
 
 <span>
+
 Seconds
+
 </span>
 
 </div>
@@ -1591,6 +1690,7 @@ Seconds
 
 <!-- =====================================================
      SCREEN 4
+     LOCATION
 ===================================================== -->
 
 <section
@@ -1601,17 +1701,23 @@ id="screen4">
 
 
 <div class="location-icon">
+
 📍
+
 </div>
 
 
 <div class="kicker">
+
 You Are Invited To
+
 </div>
 
 
 <h2>
+
 Our New Home
+
 </h2>
 
 
@@ -1619,7 +1725,9 @@ Our New Home
 
 
 <h3>
+
 Event Location
+
 </h3>
 
 
@@ -1667,6 +1775,7 @@ class="btn maps">
 
 <!-- =====================================================
      SCREEN 5
+     INVITATION MESSAGE
 ===================================================== -->
 
 <section
@@ -1677,17 +1786,23 @@ id="screen5">
 
 
 <div class="diya">
+
 🪔
+
 </div>
 
 
 <div class="kicker">
+
 A Heartfelt Invitation
+
 </div>
 
 
 <h2>
+
 Your Presence Matters
+
 </h2>
 
 
@@ -1745,6 +1860,7 @@ Cholleti Omprakash & Shivani
 
 <!-- =====================================================
      SCREEN 6
+     CONTACT & SHARE
 ===================================================== -->
 
 <section
@@ -1755,12 +1871,16 @@ id="screen6">
 
 
 <div class="kicker">
+
 We Look Forward To Seeing You
+
 </div>
 
 
 <h2>
+
 Contact Us
+
 </h2>
 
 
@@ -1772,15 +1892,23 @@ Contact Us
 <div class="contact-card">
 
 <div class="contact-icon">
+
 📞
+
 </div>
 
+
 <h3>
+
 Cholleti Omprakash
+
 </h3>
 
+
 <p>
+
 For any information
+
 </p>
 
 
@@ -1800,15 +1928,23 @@ class="btn call">
 <div class="contact-card">
 
 <div class="contact-icon">
+
 📞
+
 </div>
 
+
 <h3>
+
 Bunny
+
 </h3>
 
+
 <p>
+
 For any information
+
 </p>
 
 
@@ -1907,9 +2043,9 @@ Next →
 
 <script>
 
-/* =========================================================
+/* =====================================================
    SCREEN SYSTEM
-========================================================= */
+===================================================== */
 
 let currentScreen = 1;
 
@@ -1918,9 +2054,9 @@ const totalScreens = 6;
 let autoTimer;
 
 
-/* =========================================================
+/* =====================================================
    SHOW SCREEN
-========================================================= */
+===================================================== */
 
 function showScreen(number){
 
@@ -1929,6 +2065,7 @@ function showScreen(number){
         number = 1;
 
     }
+
 
     if(number > totalScreens){
 
@@ -1978,13 +2115,13 @@ function showScreen(number){
         + "%";
 
 
-    const back =
+    const backButton =
         document.getElementById(
             "backButton"
         );
 
 
-    const next =
+    const nextButton =
         document.getElementById(
             "nextButton"
         );
@@ -1992,12 +2129,14 @@ function showScreen(number){
 
     if(number === 1){
 
-        back.style.visibility =
+        backButton.style.visibility =
             "hidden";
 
-    }else{
+    }
 
-        back.style.visibility =
+    else{
+
+        backButton.style.visibility =
             "visible";
 
     }
@@ -2005,12 +2144,14 @@ function showScreen(number){
 
     if(number === totalScreens){
 
-        next.innerText =
+        nextButton.innerText =
             "↻ Start Again";
 
-    }else{
+    }
 
-        next.innerText =
+    else{
+
+        nextButton.innerText =
             "Next →";
 
     }
@@ -2021,17 +2162,22 @@ function showScreen(number){
 }
 
 
-/* =========================================================
-   NEXT
-========================================================= */
+/* =====================================================
+   NEXT SCREEN
+===================================================== */
 
 function nextScreen(){
 
-    if(currentScreen === totalScreens){
+    if(
+        currentScreen ===
+        totalScreens
+    ){
 
         showScreen(1);
 
-    }else{
+    }
+
+    else{
 
         showScreen(
             currentScreen + 1
@@ -2042,9 +2188,9 @@ function nextScreen(){
 }
 
 
-/* =========================================================
-   BACK
-========================================================= */
+/* =====================================================
+   PREVIOUS SCREEN
+===================================================== */
 
 function previousScreen(){
 
@@ -2059,13 +2205,15 @@ function previousScreen(){
 }
 
 
-/* =========================================================
-   AUTOMATIC TRANSITION
-========================================================= */
+/* =====================================================
+   AUTOMATIC SCREEN CHANGE
+===================================================== */
 
 function resetAutoTimer(){
 
-    clearTimeout(autoTimer);
+    clearTimeout(
+        autoTimer
+    );
 
 
     autoTimer =
@@ -2084,9 +2232,9 @@ function resetAutoTimer(){
 resetAutoTimer();
 
 
-/* =========================================================
+/* =====================================================
    COUNTDOWN
-========================================================= */
+===================================================== */
 
 const eventDate =
     new Date(
@@ -2134,32 +2282,62 @@ function updateCountdown(){
     const days =
         Math.floor(
             difference /
-            (1000 * 60 * 60 * 24)
+            (
+                1000 *
+                60 *
+                60 *
+                24
+            )
         );
 
 
     const hours =
         Math.floor(
-            (difference %
-            (1000 * 60 * 60 * 24))
+            (
+                difference %
+                (
+                    1000 *
+                    60 *
+                    60 *
+                    24
+                )
+            )
             /
-            (1000 * 60 * 60)
+            (
+                1000 *
+                60 *
+                60
+            )
         );
 
 
     const minutes =
         Math.floor(
-            (difference %
-            (1000 * 60 * 60))
+            (
+                difference %
+                (
+                    1000 *
+                    60 *
+                    60
+                )
+            )
             /
-            (1000 * 60)
+            (
+                1000 *
+                60
+            )
         );
 
 
     const seconds =
         Math.floor(
-            (difference %
-            (1000 * 60))
+            (
+                difference %
+                (
+                    1000 *
+                    60
+                )
+            )
             /
             1000
         );
@@ -2175,21 +2353,30 @@ function updateCountdown(){
         "hours"
     ).innerText =
         String(hours)
-        .padStart(2,"0");
+        .padStart(
+            2,
+            "0"
+        );
 
 
     document.getElementById(
         "minutes"
     ).innerText =
         String(minutes)
-        .padStart(2,"0");
+        .padStart(
+            2,
+            "0"
+        );
 
 
     document.getElementById(
         "seconds"
     ).innerText =
         String(seconds)
-        .padStart(2,"0");
+        .padStart(
+            2,
+            "0"
+        );
 
 }
 
@@ -2203,19 +2390,21 @@ setInterval(
 );
 
 
-/* =========================================================
+/* =====================================================
    MUSIC
-========================================================= */
+===================================================== */
 
 const music =
     document.getElementById(
         "backgroundMusic"
     );
 
+
 const musicButton =
     document.getElementById(
         "musicButton"
     );
+
 
 let musicPlaying = false;
 
@@ -2225,6 +2414,7 @@ function toggleMusic(){
     if(!musicPlaying){
 
         music.play()
+
         .then(function(){
 
             musicPlaying = true;
@@ -2233,6 +2423,7 @@ function toggleMusic(){
                 "🔊";
 
         })
+
         .catch(function(){
 
             alert(
@@ -2241,7 +2432,9 @@ function toggleMusic(){
 
         });
 
-    }else{
+    }
+
+    else{
 
         music.pause();
 
@@ -2255,9 +2448,9 @@ function toggleMusic(){
 }
 
 
-/* =========================================================
+/* =====================================================
    WHATSAPP SHARE
-========================================================= */
+===================================================== */
 
 function shareWhatsApp(){
 
@@ -2280,9 +2473,9 @@ function shareWhatsApp(){
 }
 
 
-/* =========================================================
-   COPY LINK
-========================================================= */
+/* =====================================================
+   COPY INVITATION LINK
+===================================================== */
 
 async function copyLink(){
 
@@ -2317,9 +2510,9 @@ async function copyLink(){
 }
 
 
-/* =========================================================
-   KEYBOARD CONTROLS
-========================================================= */
+/* =====================================================
+   KEYBOARD NAVIGATION
+===================================================== */
 
 document.addEventListener(
     "keydown",
@@ -2348,9 +2541,9 @@ document.addEventListener(
 );
 
 
-/* =========================================================
-   TOUCH SWIPE
-========================================================= */
+/* =====================================================
+   MOBILE SWIPE
+===================================================== */
 
 let touchStartX = 0;
 
@@ -2392,7 +2585,9 @@ document.addEventListener(
 
                 nextScreen();
 
-            }else{
+            }
+
+            else{
 
                 previousScreen();
 
