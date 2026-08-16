@@ -1,814 +1,1307 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gruha Pravesham | Cholleti Family</title>
+<title>Gurhapravesham | Cholleti Family</title>
 
 <meta name="description"
-content="You are warmly invited to the Gruha Pravesham and House Warming Ceremony of the Cholleti Family on Sunday, 30 August 2026.">
+content="Gurhapravesham and House Warming Ceremony of the Cholleti Family on Sunday, 30 August 2026.">
 
 <meta name="theme-color" content="#7b3f00">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
+body {
     font-family: Georgia, "Times New Roman", serif;
+    color: #5a2d0c;
+
     background:
-        radial-gradient(circle at top, #fff9ed 0%, #fff1d2 45%, #f8dfb1 100%);
-    color:#5a2d0c;
-    overflow-x:hidden;
+        radial-gradient(
+            circle at top,
+            #fffaf0 0%,
+            #fff0d0 50%,
+            #f7dca9 100%
+        );
+
+    overflow-x: hidden;
 }
 
-/* Decorative background */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    opacity:.15;
+
+/* =========================
+   BACKGROUND DECORATION
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.12;
+
     background-image:
-        radial-gradient(#b87522 1px, transparent 1px);
-    background-size:25px 25px;
+        radial-gradient(
+            #b87522 1px,
+            transparent 1px
+        );
+
+    background-size: 25px 25px;
 }
 
-/* Main container */
-.container{
-    width:100%;
-    max-width:900px;
-    margin:auto;
-    position:relative;
-    z-index:1;
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
 }
 
-/* Hero */
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:50px 20px;
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
     background:
         linear-gradient(
-            rgba(255,248,232,.90),
-            rgba(255,235,197,.95)
+            rgba(255,249,235,0.93),
+            rgba(255,235,197,0.96)
         );
 }
 
-.hero-content{
-    max-width:750px;
-    animation:fadeUp 1.2s ease;
+.hero-content {
+    max-width: 760px;
+    animation: fadeUp 1.2s ease;
 }
 
-.small-text{
-    font-size:18px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    color:#9a5b17;
-    margin-bottom:22px;
+.lamp {
+    font-size: 55px;
+    margin-bottom: 15px;
 }
 
-.om{
-    font-size:42px;
-    margin-bottom:12px;
+.small-text {
+    font-size: 17px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9a5b17;
+    margin-bottom: 22px;
 }
 
-.hero h1{
-    font-size:clamp(42px,8vw,78px);
-    color:#7b3f00;
-    line-height:1.05;
-    margin-bottom:20px;
-    text-shadow:1px 2px 2px rgba(100,50,0,.15);
+.hero h1 {
+    font-size: clamp(42px, 8vw, 76px);
+    line-height: 1.05;
+
+    color: #7b3f00;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        1px 2px 2px rgba(100,50,0,0.15);
 }
 
-.hero h2{
-    font-size:clamp(22px,5vw,34px);
-    color:#9a5b17;
-    margin-bottom:25px;
+.hero h2 {
+    font-size: clamp(22px, 5vw, 34px);
+    color: #9a5b17;
+    margin-bottom: 25px;
 }
 
-.hero p{
-    font-size:20px;
-    line-height:1.8;
-    color:#63370f;
+.hero p {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #63370f;
 }
 
-.family{
-    margin-top:30px;
-    font-size:clamp(30px,6vw,46px);
-    font-weight:bold;
-    color:#7b3f00;
+.family {
+    margin-top: 32px;
+
+    font-size: clamp(30px, 6vw, 46px);
+
+    font-weight: bold;
+
+    color: #7b3f00;
 }
 
-.house{
-    font-size:38px;
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 28px auto;
+
+    color: #c7892d;
 }
 
-/* Divider */
-.divider{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    margin:28px auto;
-    color:#c7892d;
+.divider span {
+    width: 70px;
+    height: 2px;
+    background: #c7892d;
 }
 
-.divider span{
-    width:70px;
-    height:2px;
-    background:#c7892d;
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 75px 18px;
 }
 
-/* Section */
-section{
-    padding:75px 18px;
+.section-title {
+    text-align: center;
+
+    font-size: clamp(36px, 7vw, 55px);
+
+    color: #7b3f00;
+
+    margin-bottom: 45px;
 }
 
-.section-title{
-    text-align:center;
-    font-size:clamp(36px,7vw,55px);
-    color:#7b3f00;
-    margin-bottom:45px;
+.section-title::after {
+    content: "";
+
+    display: block;
+
+    width: 85px;
+    height: 4px;
+
+    background: #c7892d;
+
+    margin: 18px auto 0;
+
+    border-radius: 10px;
 }
 
-.section-title::after{
-    content:"";
-    display:block;
-    width:85px;
-    height:4px;
-    background:#c7892d;
-    margin:18px auto 0;
-    border-radius:10px;
+
+/* =========================
+   EVENT CARDS
+========================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
 }
 
-/* Cards */
-.cards{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
-}
+.card {
+    background:
+        rgba(255,255,255,0.96);
 
-.card{
-    background:rgba(255,255,255,.94);
-    border-radius:25px;
-    padding:35px 22px;
-    text-align:center;
+    border-radius: 25px;
+
+    padding: 35px 22px;
+
+    text-align: center;
+
     box-shadow:
-        0 12px 35px rgba(100,55,10,.13);
-    border:1px solid rgba(199,137,45,.2);
-    transition:.3s ease;
+        0 12px 35px
+        rgba(100,55,10,0.13);
+
+    border:
+        1px solid
+        rgba(199,137,45,0.2);
+
+    transition: 0.3s ease;
 }
 
-.card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 18px 40px rgba(100,55,10,.2);
+.card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(100,55,10,0.20);
 }
 
-.card-icon{
-    margin:auto auto 18px;
+
+/* =========================
+   CALENDAR
+========================= */
+
+.calendar {
+    width: 100px;
+    height: 100px;
+
+    margin: auto;
+
+    overflow: hidden;
+
+    border:
+        3px solid
+        #7b3f00;
+
+    border-radius: 14px;
+
+    background: white;
 }
 
-/* Custom calendar */
-.calendar{
-    width:88px;
-    height:88px;
-    border:3px solid #7b3f00;
-    border-radius:14px;
-    overflow:hidden;
-    margin:auto;
-    background:white;
+.calendar-top {
+    background: #b94d32;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+
+    font-size: 17px;
+
+    padding: 8px;
 }
 
-.calendar-top{
-    background:#b94d32;
-    color:white;
-    font-family:Arial,sans-serif;
-    font-weight:bold;
-    font-size:17px;
-    padding:7px;
+.calendar-day {
+    font-family: Arial, sans-serif;
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    color: #333;
+
+    padding-top: 4px;
 }
 
-.calendar-day{
-    font-family:Arial,sans-serif;
-    font-size:38px;
-    font-weight:bold;
-    color:#333;
-    padding-top:4px;
+.card h3 {
+    font-size: 28px;
+
+    margin: 18px 0 12px;
+
+    color: #7b3f00;
 }
 
-.clock{
-    font-size:72px;
+.card p {
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    color: #58330f;
 }
 
-.location-icon{
-    font-size:70px;
+
+/* =========================
+   CLOCK
+========================= */
+
+.clock {
+    font-size: 75px;
+
+    height: 100px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
 }
 
-.card h3{
-    font-size:28px;
-    margin:18px 0 12px;
-    color:#7b3f00;
+
+/* =========================
+   LOCATION
+========================= */
+
+.location-card {
+    background: white;
+
+    border-radius: 28px;
+
+    padding: 42px 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 12px 35px
+        rgba(100,55,10,0.14);
 }
 
-.card p{
-    font-size:20px;
-    line-height:1.6;
-    color:#58330f;
+.location-icon {
+    font-size: 68px;
+
+    margin-bottom: 10px;
 }
 
-/* Location */
-.location-card{
-    background:white;
-    border-radius:28px;
-    padding:40px 25px;
-    text-align:center;
-    box-shadow:0 12px 35px rgba(100,55,10,.14);
+.location-card h3 {
+    font-size: 32px;
+
+    color: #7b3f00;
+
+    margin-bottom: 20px;
 }
 
-.location-card h3{
-    font-size:32px;
-    color:#7b3f00;
-    margin-bottom:20px;
+.address {
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    margin-bottom: 28px;
+
+    color: #58330f;
 }
 
-.address{
-    font-size:20px;
-    line-height:1.8;
-    margin-bottom:25px;
+
+/* =========================
+   MAP BUTTON
+========================= */
+
+.map-btn {
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: #7b3f00;
+
+    color: white;
+
+    padding: 15px 28px;
+
+    border-radius: 50px;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+
+    font-size: 17px;
+
+    transition: 0.3s;
 }
 
-.map-btn{
-    display:inline-block;
-    text-decoration:none;
-    background:#7b3f00;
-    color:white;
-    padding:15px 28px;
-    border-radius:50px;
-    font-family:Arial,sans-serif;
-    font-weight:bold;
-    font-size:17px;
-    transition:.3s;
+.map-btn:hover {
+
+    background: #a85c0c;
+
+    transform: scale(1.03);
 }
 
-.map-btn:hover{
-    background:#a85c0c;
-    transform:scale(1.03);
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+    text-align: center;
+
+    padding: 25px 10px;
 }
 
-/* Contact */
-.contact-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
+.message p {
+    font-size: 22px;
+
+    line-height: 1.8;
+
+    color: #63370f;
 }
 
-.contact{
-    background:white;
-    border-radius:25px;
-    padding:32px 20px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(100,55,10,.13);
+.message .big {
+    font-size: 31px;
+
+    font-weight: bold;
+
+    color: #7b3f00;
+
+    margin-top: 22px;
 }
 
-.contact-icon{
-    font-size:48px;
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
 }
 
-.contact h3{
-    color:#7b3f00;
-    font-size:26px;
-    margin:12px 0;
+.contact {
+
+    min-height: 290px;
+
+    border-radius: 28px;
+
+    padding: 35px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    box-shadow:
+        0 12px 35px
+        rgba(80,40,10,0.18);
+
+    transition: 0.3s;
+
+    border: 2px solid rgba(255,255,255,0.7);
 }
 
-.contact p{
-    font-size:18px;
-    color:#79502b;
-    margin-bottom:18px;
+.contact:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 40px
+        rgba(80,40,10,0.25);
 }
 
-.call-btn{
-    display:inline-block;
-    text-decoration:none;
-    background:#238636;
-    color:white;
-    padding:12px 25px;
-    border-radius:40px;
-    font-family:Arial,sans-serif;
-    font-weight:bold;
+
+/* OM PRAKASH */
+
+.contact.omprakash {
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b531c,
+            #c17a25
+        );
+
+    color: white;
 }
 
-/* Message */
-.message{
-    text-align:center;
-    padding:25px 10px;
+
+/* BUNNY */
+
+.contact.bunny {
+
+    background:
+        linear-gradient(
+            135deg,
+            #9b5a1d,
+            #d28b35
+        );
+
+    color: white;
 }
 
-.message p{
-    font-size:22px;
-    line-height:1.8;
-    color:#63370f;
+
+/* CONTACT ICON */
+
+.contact-icon {
+
+    width: 85px;
+    height: 85px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.20);
+
+    font-size: 43px;
+
+    margin-bottom: 15px;
+
+    border:
+        2px solid
+        rgba(255,255,255,0.5);
 }
 
-.message .big{
-    font-size:32px;
-    font-weight:bold;
-    color:#7b3f00;
-    margin-top:22px;
+.contact h3 {
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+
+    color: white;
 }
 
-/* Share section */
-.share-section{
-    background:linear-gradient(135deg,#7b3f00,#a95e12);
-    color:white;
-    text-align:center;
-    padding:65px 20px;
+.contact p {
+
+    font-size: 17px;
+
+    margin-bottom: 22px;
+
+    color: #fff5e5;
 }
 
-.share-section h2{
-    font-size:38px;
-    margin-bottom:15px;
+
+/* =========================
+   CALL BUTTON
+========================= */
+
+.call-btn {
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: #238636;
+
+    color: white;
+
+    padding: 13px 25px;
+
+    border-radius: 40px;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+
+    transition: 0.3s;
 }
 
-.share-section p{
-    font-family:Arial,sans-serif;
-    font-size:17px;
-    line-height:1.6;
-    opacity:.95;
+.call-btn:hover {
+
+    transform: scale(1.05);
+
+    background: #2da44e;
 }
 
-.share-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:14px;
-    margin-top:28px;
+
+/* =========================
+   SHARE SECTION
+========================= */
+
+.share-section {
+
+    background:
+        linear-gradient(
+            135deg,
+            #7b3f00,
+            #a95e12
+        );
+
+    color: white;
+
+    text-align: center;
+
+    padding: 65px 20px;
 }
 
-.share-btn{
-    border:none;
-    cursor:pointer;
-    text-decoration:none;
-    padding:15px 25px;
-    border-radius:50px;
-    font-family:Arial,sans-serif;
-    font-size:16px;
-    font-weight:bold;
-    transition:.3s;
+.share-section h2 {
+
+    font-size: 38px;
+
+    margin-bottom: 15px;
 }
 
-.whatsapp{
-    background:#25D366;
-    color:white;
+.share-section p {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+
+    opacity: 0.95;
 }
 
-.copy{
-    background:white;
-    color:#7b3f00;
+.share-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-top: 28px;
 }
 
-.share-btn:hover{
-    transform:translateY(-3px);
+.share-btn {
+
+    border: none;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    padding: 15px 25px;
+
+    border-radius: 50px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
 }
 
-/* Footer */
-footer{
-    background:#4e260b;
-    color:#ffe9c7;
-    text-align:center;
-    padding:30px 20px;
+.whatsapp {
+
+    background: #25D366;
+
+    color: white;
 }
 
-footer p{
-    font-family:Arial,sans-serif;
-    font-size:14px;
-    line-height:1.7;
+.copy {
+
+    background: white;
+
+    color: #7b3f00;
 }
 
-.footer-family{
-    font-family:Georgia,serif;
-    font-size:25px;
-    margin-bottom:8px;
+.share-btn:hover {
+
+    transform: translateY(-3px);
 }
 
-/* Floating flowers */
-.decor{
-    position:fixed;
-    pointer-events:none;
-    z-index:0;
-    font-size:28px;
-    opacity:.25;
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    background: #4e260b;
+
+    color: #ffe9c7;
+
+    text-align: center;
+
+    padding: 30px 20px;
 }
 
-.decor.one{
-    top:15%;
-    left:3%;
+.footer-family {
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    margin-bottom: 8px;
 }
 
-.decor.two{
-    top:42%;
-    right:3%;
+footer p {
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
 }
 
-.decor.three{
-    bottom:20%;
-    left:5%;
+
+/* =========================
+   DECORATIONS
+========================= */
+
+.decor {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    font-size: 28px;
+
+    opacity: 0.25;
 }
 
-.decor.four{
-    bottom:8%;
-    right:5%;
+.decor.one {
+
+    top: 15%;
+    left: 3%;
 }
 
-/* Animation */
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(25px);
+.decor.two {
+
+    top: 42%;
+    right: 3%;
+}
+
+.decor.three {
+
+    bottom: 20%;
+    left: 5%;
+}
+
+.decor.four {
+
+    bottom: 8%;
+    right: 5%;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
     }
-    to{
-        opacity:1;
-        transform:translateY(0);
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
     }
 }
 
-/* Mobile */
-@media(max-width:650px){
 
-    .hero{
-        min-height:92vh;
-        padding:40px 18px;
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:650px) {
+
+    .hero {
+
+        min-height: 92vh;
+
+        padding:
+            40px 18px;
     }
 
-    .hero p{
-        font-size:18px;
+    .hero p {
+
+        font-size: 18px;
     }
 
-    section{
-        padding:55px 15px;
+    section {
+
+        padding:
+            55px 15px;
     }
 
-    .cards{
-        grid-template-columns:1fr;
+    .cards {
+
+        grid-template-columns: 1fr;
     }
 
-    .contact-grid{
-        grid-template-columns:1fr;
+    .contact-grid {
+
+        grid-template-columns: 1fr;
     }
 
-    .card{
-        padding:30px 18px;
+    .card {
+
+        padding:
+            30px 18px;
     }
 
-    .location-card{
-        padding:30px 18px;
+    .location-card {
+
+        padding:
+            30px 18px;
     }
 
-    .address{
-        font-size:18px;
+    .address {
+
+        font-size: 18px;
     }
 
-    .share-section h2{
-        font-size:31px;
+    .share-section h2 {
+
+        font-size: 31px;
     }
 
-    .share-btn{
-        width:90%;
-        max-width:300px;
+    .share-btn {
+
+        width: 90%;
+
+        max-width: 300px;
     }
+
+    .contact {
+
+        min-height: 300px;
+    }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
-<!-- Decorative elements -->
+
+<!-- DECORATIONS -->
+
 <div class="decor one">🌸</div>
 <div class="decor two">🌼</div>
 <div class="decor three">🪷</div>
 <div class="decor four">🌸</div>
 
+
 <div class="container">
 
-<!-- HERO -->
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
 <header class="hero">
-    <div class="hero-content">
 
-        <div class="om">🪔</div>
+<div class="hero-content">
 
-        <div class="small-text">
-            With the blessings of God & Elders
-        </div>
+<div class="lamp">
+🪔
+</div>
 
-        <h1>
-            Gruha Pravesham
-        </h1>
+<div class="small-text">
+With the Blessings of God & Elders
+</div>
 
-        <h2>
-            & House Warming Ceremony
-        </h2>
+<h1>
+Gurhapravesham
+</h1>
 
-        <div class="divider">
-            <span></span>
-            🏠
-            <span></span>
-        </div>
+<h2>
+& House Warming Ceremony
+</h2>
 
-        <p>
-            With immense joy and happiness,
-            we warmly invite you and your family
-            to celebrate the beginning of a
-            beautiful new chapter with us.
-        </p>
+<div class="divider">
 
-        <div class="family">
-            🏠 Cholleti Family 🏠
-        </div>
+<span></span>
 
-    </div>
+🪔
+
+<span></span>
+
+</div>
+
+<p>
+
+With immense joy and happiness,
+we warmly invite you and your family
+to celebrate this beautiful occasion
+with us.
+
+</p>
+
+<div class="family">
+🏡 Cholleti Family 🏡
+</div>
+
+</div>
+
 </header>
 
 
-<!-- EVENT DETAILS -->
+<!-- ==================================================
+     EVENT DETAILS
+================================================== -->
+
 <section>
 
-    <h2 class="section-title">
-        Event Details
-    </h2>
-
-    <div class="cards">
-
-        <!-- DATE -->
-        <div class="card">
-
-            <div class="card-icon calendar">
-
-                <div class="calendar-top">
-                    AUGUST
-                </div>
-
-                <div class="calendar-day">
-                    30
-                </div>
-
-            </div>
-
-            <h3>Date</h3>
-
-            <p>
-                <strong>Sunday</strong><br>
-                30 August 2026
-            </p>
-
-        </div>
+<h2 class="section-title">
+Event Details
+</h2>
 
 
-        <!-- TIME -->
-        <div class="card">
+<div class="cards">
 
-            <div class="card-icon clock">
-                ⏰
-            </div>
 
-            <h3>Time</h3>
+<!-- DATE -->
 
-            <p>
-                <strong>8:00 AM onwards</strong>
-            </p>
+<div class="card">
 
-        </div>
+<div class="calendar">
 
-    </div>
+<div class="calendar-top">
+AUGUST
+</div>
+
+<div class="calendar-day">
+30
+</div>
+
+</div>
+
+<h3>
+Date
+</h3>
+
+<p>
+
+<strong>Sunday</strong>
+
+<br>
+
+30 August 2026
+
+</p>
+
+</div>
+
+
+<!-- TIME -->
+
+<div class="card">
+
+<div class="clock">
+⏰
+</div>
+
+<h3>
+Time
+</h3>
+
+<p>
+
+<strong>
+8:00 AM onwards
+</strong>
+
+</p>
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- LOCATION -->
+<!-- ==================================================
+     VENUE
+================================================== -->
+
 <section>
 
-    <h2 class="section-title">
-        Venue
-    </h2>
+<h2 class="section-title">
+Venue
+</h2>
 
-    <div class="location-card">
 
-        <div class="location-icon">
-            📍
-        </div>
+<div class="location-card">
 
-        <h3>
-            Our New Home
-        </h3>
+<div class="location-icon">
+📍
+</div>
 
-        <div class="address">
+<h3>
+Event Location
+</h3>
 
-            Surya Colony,<br>
-            Hayathnagar_Khalsa,<br>
-            Hathiguda,<br>
-            Telangana - 501505
+<div class="address">
 
-        </div>
+Surya Colony,
 
-        <a
-            class="map-btn"
-            href="https://maps.app.goo.gl/4P8bEPNTdbJ8EzFS8?g_st=aw"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            🗺️ Open Google Maps
-        </a>
+<br>
 
-    </div>
+Hayathnagar_Khalsa,
+
+<br>
+
+Hathiguda,
+
+<br>
+
+Telangana - 501505
+
+</div>
+
+
+<a
+
+class="map-btn"
+
+href="https://maps.app.goo.gl/4P8bEPNTdbJ8EzFS8?g_st=aw"
+
+target="_blank"
+
+rel="noopener noreferrer">
+
+🗺️ Open Google Maps
+
+</a>
+
+</div>
 
 </section>
 
 
-<!-- FAMILY MESSAGE -->
+<!-- ==================================================
+     MESSAGE
+================================================== -->
+
 <section>
 
-    <div class="message">
+<div class="message">
 
-        <div class="divider">
-            <span></span>
-            🪔
-            <span></span>
-        </div>
+<div class="divider">
 
-        <p>
-            We would be delighted to have you and
-            your family join us on this auspicious occasion.
-        </p>
+<span></span>
 
-        <p style="margin-top:20px;">
-            Your presence and blessings will make
-            our celebration even more special
-            and memorable.
-        </p>
+🪔
 
-        <div class="big">
-            With Love & Warm Regards ❤️
-        </div>
+<span></span>
 
-        <div class="big" style="font-size:25px;">
-            Cholleti Omprakash & Shivani
-        </div>
+</div>
 
-    </div>
+
+<p>
+
+We would be delighted to have you
+and your family join us on this
+auspicious occasion.
+
+</p>
+
+
+<p style="margin-top:20px;">
+
+Your presence and blessings will make
+our celebration even more special
+and memorable.
+
+</p>
+
+
+<div class="big">
+
+With Love & Warm Regards ❤️
+
+</div>
+
+
+<div
+class="big"
+style="font-size:25px;">
+
+Cholleti Omprakash & Shivani
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- CONTACT -->
+<!-- ==================================================
+     CONTACT
+================================================== -->
+
 <section>
 
-    <h2 class="section-title">
-        Contact
-    </h2>
-
-    <div class="contact-grid">
-
-        <!-- OM PRAKASH -->
-        <div class="contact">
-
-            <div class="contact-icon">
-                📞
-            </div>
-
-            <h3>
-                Cholleti Omprakash
-            </h3>
-
-            <p>
-                For any information
-            </p>
-
-            <a
-                class="call-btn"
-                href="tel:9848405645"
-            >
-                📱 Call Omprakash
-            </a>
-
-        </div>
+<h2 class="section-title">
+Contact
+</h2>
 
 
-        <!-- BUNNY -->
-        <div class="contact">
+<div class="contact-grid">
 
-            <div class="contact-icon">
-                📞
-            </div>
 
-            <h3>
-                Bunny
-            </h3>
+<!-- OM PRAKASH -->
 
-            <p>
-                For any information
-            </p>
+<div class="contact omprakash">
 
-            <a
-                class="call-btn"
-                href="tel:6303869086"
-            >
-                📱 Call Bunny
-            </a>
+<div class="contact-icon">
+📞
+</div>
 
-        </div>
+<h3>
+Cholleti Omprakash
+</h3>
 
-    </div>
+<p>
+For any information
+</p>
+
+
+<a
+
+class="call-btn"
+
+href="tel:9848405645">
+
+📱 Call Omprakash
+
+</a>
+
+</div>
+
+
+<!-- BUNNY -->
+
+<div class="contact bunny">
+
+<div class="contact-icon">
+📞
+</div>
+
+<h3>
+Bunny
+</h3>
+
+<p>
+For any information
+</p>
+
+
+<a
+
+class="call-btn"
+
+href="tel:6303869086">
+
+📱 Call Bunny
+
+</a>
+
+</div>
+
+
+</div>
 
 </section>
 
 
-<!-- SHARE -->
+<!-- ==================================================
+     SHARE
+================================================== -->
+
 <section class="share-section">
 
-    <h2>
-        Share the Invitation 💌
-    </h2>
+<h2>
+Share the Invitation 💌
+</h2>
 
-    <p>
-        Invite your family and friends
-        with this special invitation.
-    </p>
+<p>
 
-    <div class="share-buttons">
+Share this invitation with
+your family and friends.
 
-        <!-- WHATSAPP -->
-        <button
-            class="share-btn whatsapp"
-            onclick="shareWhatsApp()"
-        >
-            💚 Share on WhatsApp
-        </button>
+<br>
 
-        <!-- COPY -->
-        <button
-            class="share-btn copy"
-            onclick="copyInvitationLink()"
-        >
-            🔗 Copy Invitation Link
-        </button>
+Only the invitation website link
+will be sent on WhatsApp.
 
-    </div>
+</p>
+
+
+<div class="share-buttons">
+
+
+<button
+
+class="share-btn whatsapp"
+
+onclick="shareWhatsApp()">
+
+💚 Share on WhatsApp
+
+</button>
+
+
+<button
+
+class="share-btn copy"
+
+onclick="copyInvitationLink()">
+
+🔗 Copy Invitation Link
+
+</button>
+
+
+</div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
 <footer>
 
-    <div class="footer-family">
-        🏠 Cholleti Family 🏠
-    </div>
+<div class="footer-family">
+Cholleti Family
+</div>
 
-    <p>
-        Gruha Pravesham & House Warming Ceremony
-    </p>
+<p>
+Gurhapravesham & House Warming Ceremony
+</p>
 
-    <p>
-        Sunday • 30 August 2026 • 8:00 AM onwards
-    </p>
+<p>
+Sunday • 30 August 2026 • 8:00 AM onwards
+</p>
 
 </footer>
+
 
 </div>
 
 
 <script>
 
-/*
-    IMPORTANT:
-    When this website is published on GitHub Pages,
-    window.location.href automatically becomes your
-    real invitation website URL.
+/* ==================================================
+   GET CURRENT WEBSITE LINK
+================================================== */
 
-    WhatsApp receives ONLY this URL.
-*/
-
-function getInvitationLink(){
+function getInvitationLink() {
 
     return window.location.href;
 
 }
 
 
-/* WhatsApp */
-function shareWhatsApp(){
+/* ==================================================
+   WHATSAPP
+================================================== */
 
-    const invitationLink = getInvitationLink();
+function shareWhatsApp() {
+
+    const invitationLink =
+        getInvitationLink();
 
     const whatsappURL =
         "https://wa.me/?text=" +
@@ -816,31 +1309,36 @@ function shareWhatsApp(){
 
     window.open(
         whatsappURL,
-        "_blank",
-        "noopener,noreferrer"
+        "_blank"
     );
-
 }
 
 
-/* Copy link */
-async function copyInvitationLink(){
+/* ==================================================
+   COPY WEBSITE LINK
+================================================== */
 
-    const invitationLink = getInvitationLink();
+async function copyInvitationLink() {
 
-    try{
+    const invitationLink =
+        getInvitationLink();
 
-        await navigator.clipboard.writeText(invitationLink);
+    try {
 
-        alert(
-            "Invitation link copied! 🎉\n\n" +
-            "You can now paste it in WhatsApp."
+        await navigator.clipboard.writeText(
+            invitationLink
         );
 
-    }catch(error){
+        alert(
+            "Invitation link copied successfully! 🎉"
+        );
+
+    }
+
+    catch (error) {
 
         prompt(
-            "Copy your invitation link:",
+            "Copy this invitation link:",
             invitationLink
         );
 
@@ -850,5 +1348,7 @@ async function copyInvitationLink(){
 
 </script>
 
+
 </body>
+
 </html>
