@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#7b3f00">
+
+    <title>Cholleti Family - House Warming Invitation</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #fff9f0;
+            color: #4b2e1e;
+            line-height: 1.6;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 30px 20px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(55, 25, 5, 0.68),
+                    rgba(55, 25, 5, 0.68)
+                ),
+                url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80")
+                center / cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            animation: fadeUp 1.2s ease;
+        }
+
+        .om {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .hero-small {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 8vw, 75px);
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: clamp(22px, 5vw, 38px);
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        /* ================= BUTTONS ================= */
+
+        .btn {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 13px 27px;
+
+            background: #d88b22;
+            color: white;
+
+            text-decoration: none;
+
+            border: none;
+            border-radius: 30px;
+
+            font-size: 16px;
+            font-family: inherit;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #b86d12;
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 7px 18px rgba(0,0,0,0.18);
+        }
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 35px;
+            color: #9b5417;
+            margin-bottom: 12px;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: #d88b22;
+            margin: 15px auto 30px;
+        }
+
+        /* ================= INVITATION ================= */
+
+        .invitation-text {
+            max-width: 760px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        .family-name {
+            margin-top: 25px;
+            font-size: 29px;
+            color: #9b5417;
+            font-weight: bold;
+        }
+
+        /* ================= EVENT DETAILS ================= */
+
+        .details {
+            background: #fff0d7;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .detail-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 18px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-icon {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .detail-card h3 {
+            color: #9b5417;
+            margin-bottom: 7px;
+        }
+
+        /* ================= SCHEDULE ================= */
+
+        .schedule {
+            max-width: 680px;
+            margin: 30px auto;
+            text-align: left;
+        }
+
+        .schedule-item {
+            display: flex;
+            align-items: center;
+
+            background: white;
+
+            margin: 13px 0;
+
+            padding: 18px 20px;
+
+            border-left: 5px solid #d88b22;
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 3px 12px rgba(0,0,0,0.06);
+        }
+
+        .schedule-time {
+            min-width: 130px;
+
+            font-weight: bold;
+
+            color: #9b5417;
+        }
+
+        /* ================= LOCATION ================= */
+
+        .location {
+            background: #fff0d7;
+        }
+
+        .address-box {
+            max-width: 750px;
+
+            margin: 25px auto;
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .address-title {
+            font-size: 24px;
+            color: #9b5417;
+            margin-bottom: 15px;
+        }
+
+        .address {
+            font-size: 18px;
+        }
+
+        /* ================= INVITERS ================= */
+
+        .inviters {
+            max-width: 850px;
+
+            margin: 30px auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .inviter-card {
+            background: white;
+
+            padding: 30px 20px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .inviter-icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .inviter-card h3 {
+            color: #9b5417;
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .inviter-subtitle {
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        /* ================= CALL BUTTON ================= */
+
+        .call-btn {
+            display: inline-block;
+
+            padding: 11px 22px;
+
+            margin: 5px;
+
+            background: #9b5417;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 25px;
+
+            transition: 0.3s;
+        }
+
+        .call-btn:hover {
+            background: #6e390d;
+            transform: translateY(-2px);
+        }
+
+        /* ================= REMINDER ================= */
+
+        .reminder {
+            background: #fff0d7;
+        }
+
+        .reminder-box {
+            max-width: 700px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        /* ================= GALLERY ================= */
+
+        .gallery {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin-top: 30px;
+        }
+
+        .gallery img {
+            width: 100%;
+
+            height: 220px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+
+            transition: 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        /* ================= WHATSAPP ================= */
+
+        .rsvp {
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(100,45,10,0.88),
+                    rgba(100,45,10,0.88)
+                ),
+                url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=80")
+                center / cover no-repeat;
+        }
+
+        .rsvp .section-title {
+            color: white;
+        }
+
+        .rsvp .divider {
+            background: #f0b45d;
+        }
+
+        .rsvp p {
+            max-width: 700px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+        }
+
+        .share-note {
+            margin-top: 15px;
+            font-size: 14px !important;
+            opacity: 0.9;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #3b2418;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 40px 20px;
+        }
+
+        footer h2 {
+            margin-bottom: 10px;
+        }
+
+        /* ================= ANIMATION ================= */
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .inviters {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery img {
+                height: 240px;
+            }
+
+            .schedule-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .schedule-time {
+                min-width: auto;
+            }
+
+            section {
+                padding: 55px 18px;
+            }
+
+            .address {
+                font-size: 16px;
+            }
+
+            .call-btn {
+                display: block;
+                margin: 8px auto;
+                max-width: 230px;
+            }
+
+            .btn {
+                max-width: 95%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="om">
+            ॐ
+        </div>
+
+        <p class="hero-small">
+            With the blessings of God and our elders
+        </p>
+
+        <h1>
+            You're Invited!
+        </h1>
+
+        <h2>
+            🏡 House Warming Ceremony 🪔
+        </h2>
+
+        <p class="hero-description">
+
+            Join us as we celebrate the beginning
+            of a beautiful new chapter in our new home.
+
+        </p>
+
+        <a href="#invitation" class="btn">
+            View Invitation
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     INVITATION
+===================================================== -->
+
+<section id="invitation">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            A New Beginning
+        </h2>
+
+        <div class="divider"></div>
+
+        <p class="invitation-text">
+
+            With immense happiness and the blessings
+            of our family and friends, we are delighted
+            to invite you and your family to our
+
+            <br><br>
+
+            <strong>
+                Griha Pravesh & House Warming Ceremony
+            </strong>
+
+            <br><br>
+
+            Your presence and blessings will make
+            this special occasion even more memorable
+            for us.
+
+            <br><br>
+
+            We warmly look forward to celebrating
+            this beautiful beginning with you.
+
+        </p>
+
+        <div class="family-name">
+            🏡 Cholleti Family 🏡
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EVENT DETAILS
+===================================================== -->
+
+<section class="details">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Event Details
+        </h2>
+
+        <div class="divider"></div>
+
+        <div class="details-grid">
+
+
+            <div class="detail-card">
+
+                <div class="detail-icon">
+                    📅
+                </div>
+
+                <h3>
+                    Date
+                </h3>
+
+                <p>
+                    Sunday
+                    <br>
+
+                    <strong>
+                        30 August 2026
+                    </strong>
+                </p>
+
+            </div>
+
+
+            <div class="detail-card">
+
+                <div class="detail-icon">
+                    ⏰
+                </div>
+
+                <h3>
+                    Time
+                </h3>
+
+                <p>
+                    <strong>
+                        8:00 AM onwards
+                    </strong>
+                </p>
+
+            </div>
+
+
+            <div class="detail-card">
+
+                <div class="detail-icon">
+                    🪔
+                </div>
+
+                <h3>
+                    Occasion
+                </h3>
+
+                <p>
+                    Griha Pravesh
+                    <br>
+                    House Warming
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CEREMONY SCHEDULE
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            🪔 Ceremony Schedule
+        </h2>
+
+        <div class="divider"></div>
+
+        <div class="schedule">
+
+
+            <div class="schedule-item">
+
+                <div class="schedule-time">
+                    8:00 AM
+                </div>
+
+                <div>
+                    🪔 Ganapathi Pooja
+                </div>
+
+            </div>
+
+
+            <div class="schedule-item">
+
+                <div class="schedule-time">
+                    9:00 AM
+                </div>
+
+                <div>
+                    🏡 Griha Pravesh
+                </div>
+
+            </div>
+
+
+            <div class="schedule-item">
+
+                <div class="schedule-time">
+                    10:00 AM
+                </div>
+
+                <div>
+                    🙏 Special Pooja
+                </div>
+
+            </div>
+
+
+            <div class="schedule-item">
+
+                <div class="schedule-time">
+                    12:30 PM
+                </div>
+
+                <div>
+                    🍽️ Lunch
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LOCATION
+===================================================== -->
+
+<section class="location">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            📍 Venue
+        </h2>
+
+        <div class="divider"></div>
+
+        <div class="address-box">
+
+            <div class="address-title">
+                🏡 Our New Home
+            </div>
+
+            <p class="address">
+
+                Surya Colony
+
+                <br>
+
+                Hayathnagar_Khalsa
+
+                <br>
+
+                Hathiguda
+
+                <br>
+
+                Telangana - 501505
+
+            </p>
+
+
+            <a
+                href="https://maps.app.goo.gl/4P8bEPNTdbJ8EzFS8?g_st=aw"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn">
+
+                📍 Open Location in Google Maps
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INVITERS
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            🙏 With Best Compliments
+        </h2>
+
+        <div class="divider"></div>
+
+
+        <div class="inviters">
+
+
+            <!-- OM PRAKASH + SHIVANI -->
+
+            <div class="inviter-card">
+
+                <div class="inviter-icon">
+                    👨‍👩‍👧
+                </div>
+
+                <h3>
+                    Cholleti Omprakash & Shivani
+                </h3>
+
+                <p class="inviter-subtitle">
+                    Hosts
+                </p>
+
+                <!--
+                    Clicking this number opens the
+                    phone dial pad.
+                -->
+
+                <a
+                    href="tel:9848405645"
+                    class="call-btn">
+
+                    📞 Call Omprakash
+
+                </a>
+
+            </div>
+
+
+
+            <!-- BUNNY -->
+
+            <div class="inviter-card">
+
+                <div class="inviter-icon">
+                    👤
+                </div>
+
+                <h3>
+                    Bunny
+                </h3>
+
+                <p class="inviter-subtitle">
+                    With Love
+                </p>
+
+                <!-- Bunny's number -->
+
+                <a
+                    href="tel:6303869086"
+                    class="call-btn">
+
+                    📞 Call Bunny
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SAVE THE DATE
+===================================================== -->
+
+<section class="reminder">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            🔔 Save the Date
+        </h2>
+
+        <div class="divider"></div>
+
+
+        <div class="reminder-box">
+
+            <p>
+
+                Don't forget to join us
+                for this beautiful celebration!
+
+                <br><br>
+
+                📅
+
+                <strong>
+                    Sunday, 30 August 2026
+                </strong>
+
+                <br>
+
+                ⏰
+
+                <strong>
+                    8:00 AM onwards
+                </strong>
+
+            </p>
+
+
+            <button
+                onclick="addToCalendar()"
+                class="btn">
+
+                📅 Add to Google Calendar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            📸 Our New Home
+        </h2>
+
+        <div class="divider"></div>
+
+
+        <div class="gallery">
+
+            <img
+                src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80"
+                alt="Beautiful Home">
+
+
+            <img
+                src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=800&q=80"
+                alt="Home Interior">
+
+
+            <img
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80"
+                alt="New House">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WHATSAPP SHARE
+===================================================== -->
+
+<section class="rsvp">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            ❤️ Share Invitation
+        </h2>
+
+        <div class="divider"></div>
+
+        <p>
+
+            Share our invitation with
+            your family and friends.
+
+        </p>
+
+
+        <button
+            type="button"
+            onclick="shareOnWhatsApp()"
+            class="btn whatsapp-btn">
+
+            💚 Share Invitation on WhatsApp
+
+        </button>
+
+
+        <p class="share-note">
+
+            WhatsApp will send only the invitation link.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <h2>
+        🙏 With Love & Blessings
+    </h2>
+
+    <p>
+        Cholleti Omprakash & Shivani
+    </p>
+
+    <br>
+
+    <p>
+        We look forward to celebrating
+        this beautiful day with you!
+        🏡❤️
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 Cholleti Family
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   WHATSAPP SHARE
+   SENDS ONLY THE WEBSITE LINK
+===================================================== */
+
+function shareOnWhatsApp() {
+
+    /*
+    =====================================================
+    IMPORTANT:
+
+    AFTER YOU HOST THIS WEBSITE ONLINE,
+
+    replace the link below with your REAL website link.
+
+    Example:
+
+    https://cholleti-family.github.io/housewarming/
+
+    =====================================================
+    */
+
+    const invitationURL =
+        "YOUR_INVITATION_WEBSITE_LINK";
+
+
+    /*
+    =====================================================
+    SEND ONLY THE LINK TO WHATSAPP
+    =====================================================
+    */
+
+    const whatsappURL =
+        "https://wa.me/?text=" +
+        encodeURIComponent(invitationURL);
+
+
+    /*
+    =====================================================
+    OPEN WHATSAPP
+
+    On phone:
+    WhatsApp opens.
+
+    On computer:
+    WhatsApp Web opens.
+    =====================================================
+    */
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
+
+
+/* =====================================================
+   GOOGLE CALENDAR
+===================================================== */
+
+function addToCalendar() {
+
+    const title =
+        "Cholleti Family - House Warming Ceremony";
+
+
+    const details =
+        "Griha Pravesh & House Warming Ceremony of the Cholleti Family.";
+
+
+    const location =
+        "Surya Colony, Hayathnagar_Khalsa, Hathiguda, Telangana 501505";
+
+
+    /*
+       30 August 2026
+       8:00 AM - 1:30 PM
+    */
+
+    const start =
+        "20260830T080000";
+
+
+    const end =
+        "20260830T133000";
+
+
+    const calendarURL =
+        "https://calendar.google.com/calendar/render" +
+
+        "?action=TEMPLATE" +
+
+        "&text=" +
+        encodeURIComponent(title) +
+
+        "&dates=" +
+        start +
+        "/" +
+        end +
+
+        "&details=" +
+        encodeURIComponent(details) +
+
+        "&location=" +
+        encodeURIComponent(location);
+
+
+    window.open(
+        calendarURL,
+        "_blank"
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
