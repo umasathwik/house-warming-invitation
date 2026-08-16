@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Gurhapravesham | Cholleti Family</title>
 
@@ -12,853 +14,1272 @@ content="Gurhapravesham and House Warming Ceremony of the Cholleti Family on Sun
 
 <meta name="theme-color" content="#7b3f00">
 
+
 <style>
 
-/* =========================
+/* =====================================================
    RESET
-========================= */
+===================================================== */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: Georgia, "Times New Roman", serif;
-    color: #5a2d0c;
+body{
+
+    font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+    color:#5a2d0c;
 
     background:
-        radial-gradient(
-            circle at top,
-            #fffaf0 0%,
-            #fff0d0 50%,
-            #f7dca9 100%
-        );
+    radial-gradient(
+        circle at top,
+        #fffaf0 0%,
+        #fff0d0 50%,
+        #f4d49c 100%
+    );
 
-    overflow-x: hidden;
+    overflow-x:hidden;
 }
 
 
-/* =========================
-   BACKGROUND DECORATION
-========================= */
+/* =====================================================
+   GOLDEN PARTICLE BACKGROUND
+===================================================== */
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.12;
+.particle{
 
-    background-image:
-        radial-gradient(
-            #b87522 1px,
-            transparent 1px
-        );
+    position:fixed;
 
-    background-size: 25px 25px;
+    width:5px;
+    height:5px;
+
+    background:#d69b35;
+
+    border-radius:50%;
+
+    opacity:.5;
+
+    pointer-events:none;
+
+    animation:
+    floatParticle
+    linear
+    infinite;
+
+    z-index:0;
+}
+
+@keyframes floatParticle{
+
+    0%{
+        transform:
+        translateY(100vh)
+        translateX(0);
+        opacity:0;
+    }
+
+    20%{
+        opacity:.5;
+    }
+
+    80%{
+        opacity:.5;
+    }
+
+    100%{
+        transform:
+        translateY(-10vh)
+        translateX(60px);
+        opacity:0;
+    }
 }
 
 
-/* =========================
-   CONTAINER
-========================= */
+/* =====================================================
+   OPENING SCREEN
+===================================================== */
 
-.container {
-    width: 100%;
-    max-width: 900px;
-    margin: auto;
-    position: relative;
-    z-index: 1;
-}
+.opening{
 
+    position:fixed;
 
-/* =========================
-   HERO SECTION
-========================= */
+    inset:0;
 
-.hero {
-    min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 50px 20px;
+    z-index:9999;
 
     background:
-        linear-gradient(
-            rgba(255,249,235,0.93),
-            rgba(255,235,197,0.96)
+    radial-gradient(
+        circle,
+        #fff6dc,
+        #f0c978,
+        #7b3f00
+    );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    transition:
+    opacity 1s ease,
+    visibility 1s ease;
+}
+
+.opening.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+}
+
+.opening-content{
+
+    padding:30px;
+
+    animation:
+    openingAnimation
+    1.5s ease;
+}
+
+@keyframes openingAnimation{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        scale(.8)
+        translateY(30px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        scale(1)
+        translateY(0);
+    }
+}
+
+.opening-diya{
+
+    font-size:75px;
+
+    animation:
+    diyaGlow
+    2s infinite alternate;
+}
+
+@keyframes diyaGlow{
+
+    from{
+        filter:
+        drop-shadow(
+            0 0 5px
+            #ffb300
         );
+    }
+
+    to{
+        filter:
+        drop-shadow(
+            0 0 30px
+            #fff2a8
+        );
+    }
 }
 
-.hero-content {
-    max-width: 760px;
-    animation: fadeUp 1.2s ease;
+.opening-small{
+
+    margin-top:15px;
+
+    font-size:16px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:#fff;
 }
 
-.lamp {
-    font-size: 55px;
-    margin-bottom: 15px;
-}
+.opening h1{
 
-.small-text {
-    font-size: 17px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #9a5b17;
-    margin-bottom: 22px;
-}
+    margin-top:15px;
 
-.hero h1 {
-    font-size: clamp(42px, 8vw, 76px);
-    line-height: 1.05;
+    font-size:
+    clamp(
+        40px,
+        9vw,
+        75px
+    );
 
-    color: #7b3f00;
-
-    margin-bottom: 20px;
+    color:#fff;
 
     text-shadow:
-        1px 2px 2px rgba(100,50,0,0.15);
+    2px 3px 8px
+    rgba(0,0,0,.3);
 }
 
-.hero h2 {
-    font-size: clamp(22px, 5vw, 34px);
-    color: #9a5b17;
-    margin-bottom: 25px;
+.opening-family{
+
+    margin-top:15px;
+
+    font-size:25px;
+
+    color:#fff;
 }
 
-.hero p {
-    font-size: 20px;
-    line-height: 1.8;
-    color: #63370f;
+.enter-btn{
+
+    margin-top:30px;
+
+    border:none;
+
+    padding:
+    15px 35px;
+
+    border-radius:50px;
+
+    background:#fff;
+
+    color:#7b3f00;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 8px 25px
+    rgba(0,0,0,.25);
+
+    transition:.3s;
 }
 
-.family {
-    margin-top: 32px;
+.enter-btn:hover{
 
-    font-size: clamp(30px, 6vw, 46px);
-
-    font-weight: bold;
-
-    color: #7b3f00;
+    transform:
+    translateY(-3px)
+    scale(1.03);
 }
 
 
-/* =========================
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.container{
+
+    width:100%;
+
+    max-width:900px;
+
+    margin:auto;
+
+    position:relative;
+
+    z-index:1;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:
+    70px 20px;
+
+    background:
+    linear-gradient(
+        rgba(255,249,235,.92),
+        rgba(255,235,197,.96)
+    );
+}
+
+.hero-content{
+
+    max-width:780px;
+
+    animation:
+    fadeUp
+    1.2s ease;
+}
+
+.lamp{
+
+    font-size:58px;
+
+    margin-bottom:15px;
+}
+
+.small-text{
+
+    font-size:16px;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:#9a5b17;
+}
+
+.hero h1{
+
+    margin-top:20px;
+
+    font-size:
+    clamp(
+        44px,
+        9vw,
+        78px
+    );
+
+    line-height:1.05;
+
+    color:#7b3f00;
+
+    text-shadow:
+    1px 2px 3px
+    rgba(100,50,0,.15);
+}
+
+.hero h2{
+
+    margin-top:20px;
+
+    font-size:
+    clamp(
+        22px,
+        5vw,
+        34px
+    );
+
+    color:#9a5b17;
+}
+
+.hero p{
+
+    margin-top:28px;
+
+    font-size:20px;
+
+    line-height:1.8;
+}
+
+.family{
+
+    margin-top:30px;
+
+    font-size:
+    clamp(
+        30px,
+        6vw,
+        46px
+    );
+
+    font-weight:bold;
+
+    color:#7b3f00;
+}
+
+
+/* =====================================================
    DIVIDER
-========================= */
+===================================================== */
 
-.divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.divider{
 
-    gap: 12px;
+    display:flex;
 
-    margin: 28px auto;
+    align-items:center;
 
-    color: #c7892d;
+    justify-content:center;
+
+    gap:12px;
+
+    margin:
+    28px auto;
 }
 
-.divider span {
-    width: 70px;
-    height: 2px;
-    background: #c7892d;
+.divider span{
+
+    width:70px;
+
+    height:2px;
+
+    background:#c7892d;
 }
 
 
-/* =========================
+/* =====================================================
    SECTIONS
-========================= */
+===================================================== */
 
-section {
-    padding: 75px 18px;
+section{
+
+    padding:
+    75px 18px;
 }
 
-.section-title {
-    text-align: center;
+.section-title{
 
-    font-size: clamp(36px, 7vw, 55px);
+    text-align:center;
 
-    color: #7b3f00;
+    font-size:
+    clamp(
+        35px,
+        7vw,
+        54px
+    );
 
-    margin-bottom: 45px;
+    color:#7b3f00;
+
+    margin-bottom:45px;
 }
 
-.section-title::after {
-    content: "";
+.section-title::after{
 
-    display: block;
+    content:"";
 
-    width: 85px;
-    height: 4px;
+    display:block;
 
-    background: #c7892d;
+    width:80px;
 
-    margin: 18px auto 0;
+    height:4px;
 
-    border-radius: 10px;
+    background:#c7892d;
+
+    margin:
+    16px auto 0;
+
+    border-radius:10px;
 }
 
 
-/* =========================
+/* =====================================================
    EVENT CARDS
-========================= */
+===================================================== */
 
-.cards {
-    display: grid;
+.cards{
+
+    display:grid;
 
     grid-template-columns:
-        repeat(2, 1fr);
+    repeat(2,1fr);
 
-    gap: 25px;
+    gap:25px;
 }
 
-.card {
+.card{
+
     background:
-        rgba(255,255,255,0.96);
+    rgba(255,255,255,.96);
 
-    border-radius: 25px;
+    border-radius:25px;
 
-    padding: 35px 22px;
+    padding:
+    35px 20px;
 
-    text-align: center;
+    text-align:center;
 
     box-shadow:
-        0 12px 35px
-        rgba(100,55,10,0.13);
+    0 12px 35px
+    rgba(100,55,10,.13);
 
     border:
-        1px solid
-        rgba(199,137,45,0.2);
+    1px solid
+    rgba(199,137,45,.25);
 
-    transition: 0.3s ease;
+    transition:.3s;
 }
 
-.card:hover {
-    transform: translateY(-6px);
+.card:hover{
 
-    box-shadow:
-        0 18px 40px
-        rgba(100,55,10,0.20);
+    transform:
+    translateY(-7px);
 }
 
 
-/* =========================
+/* =====================================================
    CALENDAR
-========================= */
+===================================================== */
 
-.calendar {
-    width: 100px;
-    height: 100px;
+.calendar{
 
-    margin: auto;
+    width:105px;
 
-    overflow: hidden;
+    height:105px;
+
+    margin:auto;
+
+    overflow:hidden;
 
     border:
-        3px solid
-        #7b3f00;
+    3px solid
+    #7b3f00;
 
-    border-radius: 14px;
+    border-radius:15px;
 
-    background: white;
+    background:#fff;
 }
 
-.calendar-top {
-    background: #b94d32;
+.calendar-top{
 
-    color: white;
+    background:#b94d32;
 
-    font-family: Arial, sans-serif;
+    color:#fff;
 
-    font-weight: bold;
+    font-family:Arial,sans-serif;
 
-    font-size: 17px;
+    font-weight:bold;
 
-    padding: 8px;
+    padding:9px;
+
+    font-size:17px;
 }
 
-.calendar-day {
-    font-family: Arial, sans-serif;
+.calendar-day{
 
-    font-size: 42px;
+    font-family:Arial,sans-serif;
 
-    font-weight: bold;
+    font-size:43px;
 
-    color: #333;
+    font-weight:bold;
 
-    padding-top: 4px;
+    padding-top:5px;
+
+    color:#333;
 }
 
-.card h3 {
-    font-size: 28px;
+.card h3{
 
-    margin: 18px 0 12px;
+    font-size:28px;
 
-    color: #7b3f00;
+    color:#7b3f00;
+
+    margin:
+    18px 0 10px;
 }
 
-.card p {
-    font-size: 20px;
+.card p{
 
-    line-height: 1.6;
+    font-size:19px;
 
-    color: #58330f;
+    line-height:1.6;
 }
 
 
-/* =========================
+/* =====================================================
    CLOCK
-========================= */
+===================================================== */
 
-.clock {
-    font-size: 75px;
+.clock{
 
-    height: 100px;
+    height:105px;
 
-    display: flex;
+    display:flex;
 
-    justify-content: center;
+    align-items:center;
 
-    align-items: center;
+    justify-content:center;
+
+    font-size:75px;
 }
 
 
-/* =========================
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+.countdown-section{
+
+    background:
+    linear-gradient(
+        135deg,
+        #7b3f00,
+        #a85c0c
+    );
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:
+    65px 15px;
+}
+
+.countdown-section h2{
+
+    font-size:
+    clamp(
+        30px,
+        6vw,
+        43px
+    );
+
+    margin-bottom:10px;
+}
+
+.countdown-sub{
+
+    font-family:Arial,sans-serif;
+
+    font-size:16px;
+
+    margin-bottom:30px;
+
+    opacity:.9;
+}
+
+.countdown{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+}
+
+.time-box{
+
+    width:115px;
+
+    padding:
+    18px 10px;
+
+    background:
+    rgba(255,255,255,.15);
+
+    border:
+    1px solid
+    rgba(255,255,255,.35);
+
+    border-radius:18px;
+
+    backdrop-filter:blur(5px);
+}
+
+.time-box strong{
+
+    display:block;
+
+    font-family:Arial,sans-serif;
+
+    font-size:34px;
+}
+
+.time-box span{
+
+    font-family:Arial,sans-serif;
+
+    font-size:13px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+}
+
+
+/* =====================================================
+   INVITATION MESSAGE
+===================================================== */
+
+.message{
+
+    text-align:center;
+
+    max-width:760px;
+
+    margin:auto;
+}
+
+.message p{
+
+    font-size:21px;
+
+    line-height:1.9;
+
+    margin-bottom:18px;
+}
+
+.quote{
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    color:#7b3f00;
+
+    margin-top:25px;
+}
+
+
+/* =====================================================
    LOCATION
-========================= */
+===================================================== */
 
-.location-card {
-    background: white;
+.location-card{
 
-    border-radius: 28px;
+    background:#fff;
 
-    padding: 42px 25px;
+    border-radius:28px;
 
-    text-align: center;
+    padding:
+    40px 25px;
+
+    text-align:center;
 
     box-shadow:
-        0 12px 35px
-        rgba(100,55,10,0.14);
+    0 12px 35px
+    rgba(100,55,10,.14);
 }
 
-.location-icon {
-    font-size: 68px;
+.location-icon{
 
-    margin-bottom: 10px;
+    font-size:65px;
+
+    margin-bottom:10px;
 }
 
-.location-card h3 {
-    font-size: 32px;
+.location-card h3{
 
-    color: #7b3f00;
+    font-size:32px;
 
-    margin-bottom: 20px;
+    color:#7b3f00;
+
+    margin-bottom:20px;
 }
 
-.address {
-    font-size: 20px;
+.address{
 
-    line-height: 1.8;
+    font-size:20px;
 
-    margin-bottom: 28px;
+    line-height:1.8;
 
-    color: #58330f;
+    margin-bottom:28px;
 }
 
+.map-btn{
 
-/* =========================
-   MAP BUTTON
-========================= */
+    display:inline-block;
 
-.map-btn {
+    text-decoration:none;
 
-    display: inline-block;
+    background:#7b3f00;
 
-    text-decoration: none;
+    color:#fff;
 
-    background: #7b3f00;
+    padding:
+    15px 28px;
 
-    color: white;
+    border-radius:50px;
 
-    padding: 15px 28px;
+    font-family:Arial,sans-serif;
 
-    border-radius: 50px;
+    font-weight:bold;
 
-    font-family: Arial, sans-serif;
-
-    font-weight: bold;
-
-    font-size: 17px;
-
-    transition: 0.3s;
+    transition:.3s;
 }
 
-.map-btn:hover {
+.map-btn:hover{
 
-    background: #a85c0c;
+    background:#a85c0c;
 
-    transform: scale(1.03);
+    transform:
+    scale(1.03);
 }
 
 
-/* =========================
-   MESSAGE
-========================= */
-
-.message {
-    text-align: center;
-
-    padding: 25px 10px;
-}
-
-.message p {
-    font-size: 22px;
-
-    line-height: 1.8;
-
-    color: #63370f;
-}
-
-.message .big {
-    font-size: 31px;
-
-    font-weight: bold;
-
-    color: #7b3f00;
-
-    margin-top: 22px;
-}
-
-
-/* =========================
+/* =====================================================
    CONTACT
-========================= */
+===================================================== */
 
-.contact-grid {
+.contact-grid{
 
-    display: grid;
+    display:grid;
 
     grid-template-columns:
-        repeat(2, 1fr);
+    repeat(2,1fr);
 
-    gap: 25px;
+    gap:25px;
 }
 
-.contact {
+.contact{
 
-    min-height: 290px;
+    min-height:290px;
 
-    border-radius: 28px;
+    border-radius:28px;
 
-    padding: 35px 20px;
+    padding:
+    35px 20px;
 
-    display: flex;
+    display:flex;
 
-    flex-direction: column;
+    flex-direction:column;
 
-    align-items: center;
+    align-items:center;
 
-    justify-content: center;
+    justify-content:center;
 
-    text-align: center;
+    text-align:center;
+
+    color:#fff;
 
     box-shadow:
-        0 12px 35px
-        rgba(80,40,10,0.18);
+    0 12px 35px
+    rgba(80,40,10,.18);
 
-    transition: 0.3s;
-
-    border: 2px solid rgba(255,255,255,0.7);
+    transition:.3s;
 }
 
-.contact:hover {
+.contact:hover{
 
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 18px 40px
-        rgba(80,40,10,0.25);
+    transform:
+    translateY(-7px);
 }
 
-
-/* OM PRAKASH */
-
-.contact.omprakash {
+.omprakash{
 
     background:
-        linear-gradient(
-            135deg,
-            #8b531c,
-            #c17a25
-        );
-
-    color: white;
+    linear-gradient(
+        135deg,
+        #8b531c,
+        #c17a25
+    );
 }
 
-
-/* BUNNY */
-
-.contact.bunny {
+.bunny{
 
     background:
-        linear-gradient(
-            135deg,
-            #9b5a1d,
-            #d28b35
-        );
-
-    color: white;
+    linear-gradient(
+        135deg,
+        #9b5a1d,
+        #d28b35
+    );
 }
 
+.contact-icon{
 
-/* CONTACT ICON */
+    width:85px;
 
-.contact-icon {
+    height:85px;
 
-    width: 85px;
-    height: 85px;
+    display:flex;
 
-    display: flex;
+    align-items:center;
 
-    align-items: center;
-    justify-content: center;
+    justify-content:center;
 
-    border-radius: 50%;
+    border-radius:50%;
 
     background:
-        rgba(255,255,255,0.20);
+    rgba(255,255,255,.18);
 
-    font-size: 43px;
-
-    margin-bottom: 15px;
+    font-size:42px;
 
     border:
-        2px solid
-        rgba(255,255,255,0.5);
+    2px solid
+    rgba(255,255,255,.5);
+
+    margin-bottom:15px;
 }
 
-.contact h3 {
+.contact h3{
 
-    font-size: 28px;
+    font-size:27px;
 
-    margin-bottom: 10px;
-
-    color: white;
+    margin-bottom:10px;
 }
 
-.contact p {
+.contact p{
 
-    font-size: 17px;
+    font-size:17px;
 
-    margin-bottom: 22px;
-
-    color: #fff5e5;
+    margin-bottom:20px;
 }
 
+.call-btn{
 
-/* =========================
-   CALL BUTTON
-========================= */
+    display:inline-block;
 
-.call-btn {
+    text-decoration:none;
 
-    display: inline-block;
+    background:#238636;
 
-    text-decoration: none;
+    color:#fff;
 
-    background: #238636;
+    padding:
+    13px 25px;
 
-    color: white;
+    border-radius:40px;
 
-    padding: 13px 25px;
+    font-family:Arial,sans-serif;
 
-    border-radius: 40px;
+    font-weight:bold;
 
-    font-family: Arial, sans-serif;
-
-    font-weight: bold;
-
-    transition: 0.3s;
+    transition:.3s;
 }
 
-.call-btn:hover {
+.call-btn:hover{
 
-    transform: scale(1.05);
+    background:#2da44e;
 
-    background: #2da44e;
+    transform:
+    scale(1.05);
 }
 
 
-/* =========================
-   SHARE SECTION
-========================= */
+/* =====================================================
+   SHARE
+===================================================== */
 
-.share-section {
+.share-section{
 
     background:
-        linear-gradient(
-            135deg,
-            #7b3f00,
-            #a95e12
-        );
+    linear-gradient(
+        135deg,
+        #7b3f00,
+        #a95e12
+    );
 
-    color: white;
+    color:#fff;
 
-    text-align: center;
+    text-align:center;
 
-    padding: 65px 20px;
+    padding:
+    65px 20px;
 }
 
-.share-section h2 {
+.share-section h2{
 
-    font-size: 38px;
+    font-size:38px;
 
-    margin-bottom: 15px;
+    margin-bottom:15px;
 }
 
-.share-section p {
+.share-section p{
 
-    font-family: Arial, sans-serif;
+    font-family:Arial,sans-serif;
 
-    font-size: 17px;
+    font-size:16px;
 
-    line-height: 1.6;
-
-    opacity: 0.95;
+    line-height:1.7;
 }
 
-.share-buttons {
+.share-buttons{
 
-    display: flex;
+    display:flex;
 
-    flex-wrap: wrap;
+    flex-wrap:wrap;
 
-    justify-content: center;
+    justify-content:center;
 
-    gap: 14px;
+    gap:15px;
 
-    margin-top: 28px;
+    margin-top:28px;
 }
 
-.share-btn {
+.share-btn{
 
-    border: none;
+    border:none;
 
-    cursor: pointer;
+    cursor:pointer;
 
-    text-decoration: none;
+    padding:
+    15px 27px;
 
-    padding: 15px 25px;
+    border-radius:50px;
 
-    border-radius: 50px;
+    font-family:Arial,sans-serif;
 
-    font-family: Arial, sans-serif;
+    font-size:16px;
 
-    font-size: 16px;
+    font-weight:bold;
 
-    font-weight: bold;
-
-    transition: 0.3s;
+    transition:.3s;
 }
 
-.whatsapp {
+.whatsapp{
 
-    background: #25D366;
+    background:#25D366;
 
-    color: white;
+    color:#fff;
 }
 
-.copy {
+.copy{
 
-    background: white;
+    background:#fff;
 
-    color: #7b3f00;
+    color:#7b3f00;
 }
 
-.share-btn:hover {
+.share-btn:hover{
 
-    transform: translateY(-3px);
+    transform:
+    translateY(-4px);
 }
 
 
-/* =========================
+/* =====================================================
+   THANK YOU
+===================================================== */
+
+.thank-you{
+
+    text-align:center;
+
+    padding:
+    90px 20px;
+
+    background:
+    linear-gradient(
+        #fff5dc,
+        #f7dca9
+    );
+}
+
+.thank-diya{
+
+    font-size:60px;
+
+    margin-bottom:15px;
+}
+
+.thank-you h2{
+
+    font-size:
+    clamp(
+        35px,
+        7vw,
+        55px
+    );
+
+    color:#7b3f00;
+}
+
+.thank-you p{
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    margin-top:18px;
+}
+
+.thank-family{
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    color:#7b3f00;
+
+    margin-top:25px;
+}
+
+
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
-footer {
+footer{
 
-    background: #4e260b;
+    background:#4e260b;
 
-    color: #ffe9c7;
+    color:#ffe9c7;
 
-    text-align: center;
+    text-align:center;
 
-    padding: 30px 20px;
+    padding:30px 20px;
+
+    padding-bottom:90px;
 }
 
-.footer-family {
+.footer-family{
 
-    font-family: Georgia, serif;
+    font-size:25px;
 
-    font-size: 25px;
-
-    margin-bottom: 8px;
+    margin-bottom:8px;
 }
 
-footer p {
+footer p{
 
-    font-family: Arial, sans-serif;
+    font-family:Arial,sans-serif;
 
-    font-size: 14px;
+    font-size:14px;
 
-    line-height: 1.7;
-}
-
-
-/* =========================
-   DECORATIONS
-========================= */
-
-.decor {
-
-    position: fixed;
-
-    pointer-events: none;
-
-    z-index: 0;
-
-    font-size: 28px;
-
-    opacity: 0.25;
-}
-
-.decor.one {
-
-    top: 15%;
-    left: 3%;
-}
-
-.decor.two {
-
-    top: 42%;
-    right: 3%;
-}
-
-.decor.three {
-
-    bottom: 20%;
-    left: 5%;
-}
-
-.decor.four {
-
-    bottom: 8%;
-    right: 5%;
+    line-height:1.7;
 }
 
 
-/* =========================
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
+
+.mobile-nav{
+
+    position:fixed;
+
+    bottom:0;
+
+    left:0;
+
+    right:0;
+
+    z-index:5000;
+
+    background:
+    rgba(78,38,11,.97);
+
+    display:none;
+
+    justify-content:
+    space-around;
+
+    padding:
+    10px 5px;
+
+    box-shadow:
+    0 -5px 20px
+    rgba(0,0,0,.2);
+}
+
+.mobile-nav a{
+
+    color:#ffe9c7;
+
+    text-decoration:none;
+
+    text-align:center;
+
+    font-family:Arial,sans-serif;
+
+    font-size:11px;
+}
+
+.mobile-nav span{
+
+    display:block;
+
+    font-size:21px;
+
+    margin-bottom:2px;
+}
+
+
+/* =====================================================
    ANIMATION
-========================= */
+===================================================== */
 
-@keyframes fadeUp {
+@keyframes fadeUp{
 
-    from {
+    from{
 
-        opacity: 0;
+        opacity:0;
 
         transform:
-            translateY(25px);
+        translateY(30px);
     }
 
-    to {
+    to{
 
-        opacity: 1;
+        opacity:1;
 
         transform:
-            translateY(0);
+        translateY(0);
     }
 }
 
 
-/* =========================
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
-@media(max-width:650px) {
+@media(max-width:650px){
 
-    .hero {
+    .hero{
 
-        min-height: 92vh;
-
-        padding:
-            40px 18px;
-    }
-
-    .hero p {
-
-        font-size: 18px;
-    }
-
-    section {
+        min-height:95vh;
 
         padding:
-            55px 15px;
+        50px 18px;
     }
 
-    .cards {
+    .hero p{
 
-        grid-template-columns: 1fr;
+        font-size:18px;
     }
 
-    .contact-grid {
-
-        grid-template-columns: 1fr;
-    }
-
-    .card {
+    section{
 
         padding:
-            30px 18px;
+        55px 15px;
     }
 
-    .location-card {
+    .cards{
 
-        padding:
-            30px 18px;
+        grid-template-columns:1fr;
     }
 
-    .address {
+    .contact-grid{
 
-        font-size: 18px;
+        grid-template-columns:1fr;
     }
 
-    .share-section h2 {
+    .time-box{
 
-        font-size: 31px;
+        width:105px;
     }
 
-    .share-btn {
+    .time-box strong{
 
-        width: 90%;
-
-        max-width: 300px;
+        font-size:28px;
     }
 
-    .contact {
+    .mobile-nav{
 
-        min-height: 300px;
+        display:flex;
+    }
+
+    .share-btn{
+
+        width:90%;
+
+        max-width:300px;
+    }
+
+    .address{
+
+        font-size:18px;
     }
 
 }
@@ -871,22 +1292,67 @@ footer p {
 <body>
 
 
-<!-- DECORATIONS -->
+<!-- =====================================================
+     OPENING SCREEN
+===================================================== -->
 
-<div class="decor one">🌸</div>
-<div class="decor two">🌼</div>
-<div class="decor three">🪷</div>
-<div class="decor four">🌸</div>
+<div class="opening" id="opening">
+
+    <div class="opening-content">
+
+        <div class="opening-diya">
+            🪔
+        </div>
+
+        <div class="opening-small">
+            You Are Warmly Invited
+        </div>
+
+        <h1>
+            Gurhapravesham
+        </h1>
+
+        <div class="opening-family">
+            Cholleti Family
+        </div>
+
+        <button
+        class="enter-btn"
+        onclick="enterInvitation()">
+
+            ✨ Enter Invitation
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FLOATING PARTICLES
+===================================================== -->
+
+<div class="particle" style="left:8%;animation-duration:12s;"></div>
+<div class="particle" style="left:18%;animation-duration:15s;"></div>
+<div class="particle" style="left:31%;animation-duration:11s;"></div>
+<div class="particle" style="left:45%;animation-duration:17s;"></div>
+<div class="particle" style="left:59%;animation-duration:13s;"></div>
+<div class="particle" style="left:72%;animation-duration:16s;"></div>
+<div class="particle" style="left:84%;animation-duration:12s;"></div>
+<div class="particle" style="left:94%;animation-duration:18s;"></div>
 
 
 <div class="container">
 
 
-<!-- ==================================================
+<!-- =====================================================
      HERO
-================================================== -->
+===================================================== -->
 
-<header class="hero">
+<header
+class="hero"
+id="home">
 
 <div class="hero-content">
 
@@ -895,7 +1361,9 @@ footer p {
 </div>
 
 <div class="small-text">
+
 With the Blessings of God & Elders
+
 </div>
 
 <h1>
@@ -926,7 +1394,9 @@ with us.
 </p>
 
 <div class="family">
+
 🏡 Cholleti Family 🏡
+
 </div>
 
 </div>
@@ -934,14 +1404,14 @@ with us.
 </header>
 
 
-<!-- ==================================================
+<!-- =====================================================
      EVENT DETAILS
-================================================== -->
+===================================================== -->
 
-<section>
+<section id="details">
 
 <h2 class="section-title">
-Event Details
+Our Special Day
 </h2>
 
 
@@ -970,7 +1440,9 @@ Date
 
 <p>
 
-<strong>Sunday</strong>
+<strong>
+Sunday
+</strong>
 
 <br>
 
@@ -1009,14 +1481,156 @@ Time
 </section>
 
 
-<!-- ==================================================
-     VENUE
-================================================== -->
+<!-- =====================================================
+     COUNTDOWN
+===================================================== -->
+
+<section class="countdown-section">
+
+<h2>
+Our Special Day Begins In
+</h2>
+
+<div class="countdown-sub">
+30 August 2026 • 8:00 AM
+</div>
+
+
+<div class="countdown">
+
+
+<div class="time-box">
+
+<strong id="days">
+0
+</strong>
+
+<span>
+Days
+</span>
+
+</div>
+
+
+<div class="time-box">
+
+<strong id="hours">
+0
+</strong>
+
+<span>
+Hours
+</span>
+
+</div>
+
+
+<div class="time-box">
+
+<strong id="minutes">
+0
+</strong>
+
+<span>
+Minutes
+</span>
+
+</div>
+
+
+<div class="time-box">
+
+<strong id="seconds">
+0
+</strong>
+
+<span>
+Seconds
+</span>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     INVITATION MESSAGE
+===================================================== -->
 
 <section>
 
+<div class="message">
+
+<div class="divider">
+
+<span></span>
+
+🪷
+
+<span></span>
+
+</div>
+
+
+<p>
+
+We would be delighted to have you
+and your family join us on this
+auspicious occasion.
+
+</p>
+
+
+<p>
+
+Your presence and blessings will make
+our celebration even more special
+and memorable.
+
+</p>
+
+
+<div class="quote">
+
+“Your presence is our greatest blessing.”
+
+</div>
+
+
+<div class="family">
+
+With Love & Warm Regards ❤️
+
+</div>
+
+
+<div
+style="
+font-size:25px;
+font-weight:bold;
+color:#7b3f00;
+margin-top:15px;">
+
+Cholleti Omprakash & Shivani
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     LOCATION
+===================================================== -->
+
+<section id="location">
+
 <h2 class="section-title">
-Venue
+Find Us
 </h2>
 
 
@@ -1068,71 +1682,14 @@ rel="noopener noreferrer">
 </section>
 
 
-<!-- ==================================================
-     MESSAGE
-================================================== -->
-
-<section>
-
-<div class="message">
-
-<div class="divider">
-
-<span></span>
-
-🪔
-
-<span></span>
-
-</div>
-
-
-<p>
-
-We would be delighted to have you
-and your family join us on this
-auspicious occasion.
-
-</p>
-
-
-<p style="margin-top:20px;">
-
-Your presence and blessings will make
-our celebration even more special
-and memorable.
-
-</p>
-
-
-<div class="big">
-
-With Love & Warm Regards ❤️
-
-</div>
-
-
-<div
-class="big"
-style="font-size:25px;">
-
-Cholleti Omprakash & Shivani
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ==================================================
+<!-- =====================================================
      CONTACT
-================================================== -->
+===================================================== -->
 
-<section>
+<section id="contact">
 
 <h2 class="section-title">
-Contact
+Contact Us
 </h2>
 
 
@@ -1154,7 +1711,6 @@ Cholleti Omprakash
 <p>
 For any information
 </p>
-
 
 <a
 
@@ -1185,7 +1741,6 @@ Bunny
 For any information
 </p>
 
-
 <a
 
 class="call-btn"
@@ -1204,9 +1759,9 @@ href="tel:6303869086">
 </section>
 
 
-<!-- ==================================================
+<!-- =====================================================
      SHARE
-================================================== -->
+===================================================== -->
 
 <section class="share-section">
 
@@ -1216,13 +1771,13 @@ Share the Invitation 💌
 
 <p>
 
-Share this invitation with
-your family and friends.
+Share this special invitation
+with your family and friends.
 
 <br>
 
-Only the invitation website link
-will be sent on WhatsApp.
+Only the website link will be
+sent through WhatsApp.
 
 </p>
 
@@ -1257,22 +1812,64 @@ onclick="copyInvitationLink()">
 </section>
 
 
-<!-- ==================================================
+<!-- =====================================================
+     THANK YOU
+===================================================== -->
+
+<section class="thank-you">
+
+<div class="thank-diya">
+🪔
+</div>
+
+<h2>
+Thank You
+</h2>
+
+<p>
+
+We look forward to celebrating
+this special day with you.
+
+</p>
+
+<div class="thank-family">
+
+Cholleti Family
+
+</div>
+
+<p>
+
+30 • 08 • 2026
+
+</p>
+
+</section>
+
+
+<!-- =====================================================
      FOOTER
-================================================== -->
+===================================================== -->
 
 <footer>
 
 <div class="footer-family">
+
 Cholleti Family
+
 </div>
 
 <p>
+
 Gurhapravesham & House Warming Ceremony
+
 </p>
 
 <p>
+
 Sunday • 30 August 2026 • 8:00 AM onwards
+
 </p>
 
 </footer>
@@ -1281,53 +1878,244 @@ Sunday • 30 August 2026 • 8:00 AM onwards
 </div>
 
 
+<!-- =====================================================
+     MOBILE BOTTOM NAVIGATION
+===================================================== -->
+
+<nav class="mobile-nav">
+
+<a href="#home">
+
+<span>🏠</span>
+Home
+
+</a>
+
+
+<a href="#details">
+
+<span>📅</span>
+Details
+
+</a>
+
+
+<a href="#location">
+
+<span>📍</span>
+Location
+
+</a>
+
+
+<a href="#contact">
+
+<span>📞</span>
+Contact
+
+</a>
+
+</nav>
+
+
 <script>
 
-/* ==================================================
-   GET CURRENT WEBSITE LINK
-================================================== */
 
-function getInvitationLink() {
+/* =====================================================
+   OPEN INVITATION
+===================================================== */
+
+function enterInvitation(){
+
+    const opening =
+        document.getElementById(
+            "opening"
+        );
+
+    opening.classList.add(
+        "hide"
+    );
+
+}
+
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+/*
+   30 August 2026
+   8:00 AM
+*/
+
+const eventDate =
+new Date(
+    "August 30, 2026 08:00:00"
+).getTime();
+
+
+function updateCountdown(){
+
+    const now =
+        new Date().getTime();
+
+    const difference =
+        eventDate - now;
+
+
+    if(difference <= 0){
+
+        document.getElementById(
+            "days"
+        ).innerText = "0";
+
+        document.getElementById(
+            "hours"
+        ).innerText = "0";
+
+        document.getElementById(
+            "minutes"
+        ).innerText = "0";
+
+        document.getElementById(
+            "seconds"
+        ).innerText = "0";
+
+        return;
+    }
+
+
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (difference %
+            (1000 * 60 * 60 * 24))
+            /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (difference %
+            (1000 * 60 * 60))
+            /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (difference %
+            (1000 * 60))
+            /
+            1000
+        );
+
+
+    document.getElementById(
+        "days"
+    ).innerText = days;
+
+
+    document.getElementById(
+        "hours"
+    ).innerText =
+        String(hours).padStart(
+            2,
+            "0"
+        );
+
+
+    document.getElementById(
+        "minutes"
+    ).innerText =
+        String(minutes).padStart(
+            2,
+            "0"
+        );
+
+
+    document.getElementById(
+        "seconds"
+    ).innerText =
+        String(seconds).padStart(
+            2,
+            "0"
+        );
+
+}
+
+
+updateCountdown();
+
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+/* =====================================================
+   GET WEBSITE LINK
+===================================================== */
+
+function getInvitationLink(){
 
     return window.location.href;
 
 }
 
 
-/* ==================================================
+/* =====================================================
    WHATSAPP
-================================================== */
+===================================================== */
 
-function shareWhatsApp() {
+function shareWhatsApp(){
 
     const invitationLink =
         getInvitationLink();
 
+
     const whatsappURL =
         "https://wa.me/?text=" +
-        encodeURIComponent(invitationLink);
+        encodeURIComponent(
+            invitationLink
+        );
+
 
     window.open(
         whatsappURL,
         "_blank"
     );
+
 }
 
 
-/* ==================================================
-   COPY WEBSITE LINK
-================================================== */
+/* =====================================================
+   COPY LINK
+===================================================== */
 
-async function copyInvitationLink() {
+async function copyInvitationLink(){
 
     const invitationLink =
         getInvitationLink();
 
-    try {
 
-        await navigator.clipboard.writeText(
+    try{
+
+        await navigator
+        .clipboard
+        .writeText(
             invitationLink
         );
+
 
         alert(
             "Invitation link copied successfully! 🎉"
@@ -1335,7 +2123,7 @@ async function copyInvitationLink() {
 
     }
 
-    catch (error) {
+    catch(error){
 
         prompt(
             "Copy this invitation link:",
@@ -1350,5 +2138,4 @@ async function copyInvitationLink() {
 
 
 </body>
-
 </html>
