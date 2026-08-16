@@ -1,1747 +1,737 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Cholleti Family | Gruhapravesham</title>
-
-<meta name="theme-color" content="#6d3500">
+<title>Gruhapravesham Invitation | Cholleti Family</title>
 
 <style>
-
-/* =====================================================
-   RESET
-===================================================== */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-html,
-body{
+html,body{
     width:100%;
     height:100%;
     overflow:hidden;
+    font-family:Georgia,"Times New Roman",serif;
 }
 
 body{
-    font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
-
-    background:#180900;
-
-    color:#fff4dc;
+    background:#170000;
+    color:#fff5dc;
 }
 
-
-/* =====================================================
-   MAIN CINEMATIC BACKGROUND
-===================================================== */
-
-.stage{
-
-    position:fixed;
-
-    inset:0;
-
+/* MAIN APP */
+.app{
     width:100%;
-    height:100%;
-
-    overflow:hidden;
-
-    background:
-
-    radial-gradient(
-        circle at 50% 35%,
-        rgba(220,145,45,.25),
-        transparent 35%
-    ),
-
-    radial-gradient(
-        circle at 50% 100%,
-        #8b4708,
-        #351600 55%,
-        #120600 100%
-    );
-}
-
-
-.stage::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:70vw;
-    height:70vw;
-
-    max-width:700px;
-    max-height:700px;
-
-    left:50%;
-    top:25%;
-
-    transform:
-    translate(-50%,-50%);
-
-    border-radius:50%;
-
-    background:
-    radial-gradient(
-        circle,
-        rgba(255,210,100,.18),
-        transparent 68%
-    );
-
-    animation:
-    lightPulse
-    4s
-    ease-in-out
-    infinite;
-}
-
-
-@keyframes lightPulse{
-
-    0%,100%{
-
-        transform:
-        translate(-50%,-50%)
-        scale(.9);
-
-        opacity:.6;
-    }
-
-    50%{
-
-        transform:
-        translate(-50%,-50%)
-        scale(1.15);
-
-        opacity:1;
-    }
-}
-
-
-/* =====================================================
-   FLOATING PARTICLES
-===================================================== */
-
-.particle{
-
-    position:absolute;
-
-    bottom:-30px;
-
-    width:5px;
-    height:5px;
-
-    border-radius:50%;
-
-    background:#ffd778;
-
-    box-shadow:
-    0 0 10px #ffd778;
-
-    opacity:.7;
-
-    animation:
-    rise
-    linear
-    infinite;
-
-    pointer-events:none;
-}
-
-
-@keyframes rise{
-
-    0%{
-
-        transform:
-        translateY(0)
-        translateX(0)
-        scale(.5);
-
-        opacity:0;
-    }
-
-    15%{
-        opacity:.8;
-    }
-
-    80%{
-        opacity:.7;
-    }
-
-    100%{
-
-        transform:
-        translateY(-115vh)
-        translateX(80px)
-        scale(1.2);
-
-        opacity:0;
-    }
-}
-
-
-/* =====================================================
-   FLOWERS
-===================================================== */
-
-.flower{
-
-    position:absolute;
-
-    font-size:25px;
-
-    opacity:.45;
-
-    pointer-events:none;
-
-    animation:
-    flowerFloat
-    7s
-    ease-in-out
-    infinite;
-}
-
-
-@keyframes flowerFloat{
-
-    0%,100%{
-
-        transform:
-        translateY(0)
-        rotate(0deg);
-    }
-
-    50%{
-
-        transform:
-        translateY(-25px)
-        rotate(15deg);
-    }
-}
-
-
-/* =====================================================
-   SCREENS
-===================================================== */
-
-.screen{
-
-    position:absolute;
-
-    inset:0;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    padding:
-    40px 20px;
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transform:
-    scale(1.08)
-    translateY(25px);
-
-    transition:
-
-    opacity .9s ease,
-
-    transform 1s
-    cubic-bezier(
-        .22,
-        .61,
-        .36,
-        1
-    ),
-
-    visibility .9s;
-
-    z-index:5;
-}
-
-
-.screen.active{
-
-    opacity:1;
-
-    visibility:visible;
-
-    transform:
-    scale(1)
-    translateY(0);
-
-    z-index:10;
-}
-
-
-.screen-content{
-
-    width:100%;
-
-    max-width:800px;
-
+    height:100vh;
     position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(255,190,70,.08),transparent 25%),
+        radial-gradient(circle at 80% 80%,rgba(255,100,80,.08),transparent 25%),
+        linear-gradient(135deg,#160000,#360000,#190000);
+}
 
+.app:before{
+    content:"";
+    position:absolute;
+    inset:8px;
+    border:1px solid rgba(218,170,70,.35);
+    pointer-events:none;
     z-index:20;
-
-    animation:
-    contentIn
-    1s
-    ease;
 }
 
-
-@keyframes contentIn{
-
-    from{
-
-        opacity:0;
-
-        transform:
-        translateY(35px);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-        translateY(0);
-    }
-}
-
-
-/* =====================================================
-   DIYA
-===================================================== */
-
-.diya{
-
-    font-size:
-    clamp(
-        55px,
-        12vw,
-        90px
-    );
-
-    margin-bottom:20px;
-
-    filter:
-    drop-shadow(
-        0 0 18px
-        rgba(255,190,60,.8)
-    );
-
-    animation:
-    diyaGlow
-    1.8s
-    ease-in-out
-    infinite alternate;
-}
-
-
-@keyframes diyaGlow{
-
-    from{
-
-        filter:
-        drop-shadow(
-            0 0 8px
-            rgba(255,190,60,.5)
-        );
-    }
-
-    to{
-
-        filter:
-        drop-shadow(
-            0 0 35px
-            rgba(255,210,80,1)
-        );
-    }
-}
-
-
-/* =====================================================
-   TEXT
-===================================================== */
-
-.kicker{
-
-    font-family:Arial,sans-serif;
-
-    font-size:14px;
-
-    letter-spacing:4px;
-
-    text-transform:uppercase;
-
-    color:#f4c96b;
-
-    margin-bottom:20px;
-}
-
-
-h1{
-
-    font-size:
-    clamp(
-        48px,
-        11vw,
-        100px
-    );
-
-    line-height:1;
-
-    color:#fff3cd;
-
-    text-shadow:
-    0 4px 20px
-    rgba(0,0,0,.5);
-
-    margin-bottom:20px;
-}
-
-
-h2{
-
-    font-size:
-    clamp(
-        35px,
-        8vw,
-        70px
-    );
-
-    color:#ffe2a0;
-
-    margin-bottom:20px;
-}
-
-
-h3{
-
-    font-size:30px;
-
-    color:#ffd27a;
-
-    margin-bottom:15px;
-}
-
-
-.subtitle{
-
-    font-size:
-    clamp(
-        18px,
-        4vw,
-        26px
-    );
-
-    line-height:1.7;
-
-    color:#fff1d2;
-}
-
-
-/* =====================================================
-   ORNAMENT
-===================================================== */
-
-.ornament{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:15px;
-
-    margin:25px 0;
-}
-
-
-.ornament span{
-
-    width:
-    clamp(
-        45px,
-        12vw,
-        100px
-    );
-
-    height:1px;
-
-    background:
-    linear-gradient(
-        to right,
-        transparent,
-        #dba548,
-        transparent
-    );
-}
-
-
-.ornament b{
-
-    color:#ffd477;
-
-    font-size:22px;
-}
-
-
-/* =====================================================
-   BUTTONS
-===================================================== */
-
-.btn{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:8px;
-
-    border:none;
-
-    text-decoration:none;
-
-    cursor:pointer;
-
-    padding:
-    14px 28px;
-
-    border-radius:50px;
-
-    font-family:Arial,sans-serif;
-
-    font-size:15px;
-
-    font-weight:bold;
-
-    transition:.3s;
-
-    margin:7px;
-}
-
-
-.btn:hover{
-
-    transform:
-    translateY(-3px)
-    scale(1.02);
-}
-
-
-.primary{
-
-    background:
-    linear-gradient(
-        135deg,
-        #ffd66f,
-        #c47a16
-    );
-
-    color:#351500;
-
-    box-shadow:
-    0 8px 25px
-    rgba(255,190,60,.25);
-}
-
-
-.secondary{
-
-    background:
-    rgba(255,255,255,.12);
-
-    color:#fff3d2;
-
-    border:
-    1px solid
-    rgba(255,220,140,.45);
-}
-
-
-.maps{
-
-    background:#fff;
-
-    color:#5d2e00;
-}
-
-
-.call{
-
-    background:#24a148;
-
-    color:#fff;
-}
-
-
-.whatsapp{
-
-    background:#25d366;
-
-    color:#fff;
-}
-
-
-/* =====================================================
-   FAMILY NAME
-===================================================== */
-
-.family-name{
-
-    font-size:
-    clamp(
-        42px,
-        9vw,
-        80px
-    );
-
-    color:#ffe5a7;
-
-    margin-top:10px;
-
-    text-shadow:
-    0 0 25px
-    rgba(255,200,80,.25);
-}
-
-
-/* =====================================================
-   GRUHAPRAVESHAM
-===================================================== */
-
-.gruhapravesham-symbol{
-
-    font-size:65px;
-
-    margin-bottom:15px;
-}
-
-
-.date-line{
-
-    font-family:Arial,sans-serif;
-
-    font-size:16px;
-
-    letter-spacing:3px;
-
-    color:#f2c86d;
-
-    margin-top:20px;
-}
-
-
-/* =====================================================
-   EVENT DETAILS
-===================================================== */
-
-.event-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:20px;
-
-    margin-top:25px;
-}
-
-
-.event-card{
-
-    padding:
-    25px 15px;
-
-    background:
-    rgba(255,255,255,.09);
-
-    border:
-    1px solid
-    rgba(255,218,145,.3);
-
-    border-radius:25px;
-
-    backdrop-filter:
-    blur(8px);
-
-    box-shadow:
-    0 15px 40px
-    rgba(0,0,0,.2);
-}
-
-
-.event-icon{
-
-    font-size:45px;
-
-    margin-bottom:12px;
-}
-
-
-.event-card strong{
-
-    display:block;
-
-    font-family:Arial,sans-serif;
-
-    font-size:21px;
-
-    color:#fff1cf;
-
-    margin-bottom:7px;
-}
-
-
-.event-card span{
-
-    color:#edcc8b;
-
-    font-family:Arial,sans-serif;
-
-    font-size:15px;
-}
-
-
-/* =====================================================
-   COUNTDOWN
-===================================================== */
-
-.countdown-title{
-
-    margin-top:30px;
-
-    font-family:Arial,sans-serif;
-
-    font-size:13px;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-
-    color:#eac06b;
-}
-
-
-.countdown{
-
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:10px;
-
-    margin-top:15px;
-}
-
-
-.count-box{
-
-    min-width:85px;
-
-    padding:
-    12px 8px;
-
-    border-radius:15px;
-
-    background:
-    rgba(0,0,0,.2);
-
-    border:
-    1px solid
-    rgba(255,220,150,.25);
-}
-
-
-.count-box strong{
-
-    display:block;
-
-    font-family:Arial,sans-serif;
-
-    font-size:27px;
-
-    color:#fff1c9;
-}
-
-
-.count-box span{
-
-    font-family:Arial,sans-serif;
-
-    font-size:10px;
-
-    text-transform:uppercase;
-
-    color:#dcb978;
-}
-
-
-/* =====================================================
-   LOCATION
-===================================================== */
-
-.location-box{
-
-    max-width:600px;
-
-    margin:auto;
-
-    padding:
-    30px 20px;
-
-    border-radius:28px;
-
-    background:
-    rgba(255,255,255,.09);
-
-    border:
-    1px solid
-    rgba(255,218,145,.3);
-
-    backdrop-filter:
-    blur(10px);
-}
-
-
-.location-icon{
-
-    font-size:60px;
-
-    margin-bottom:10px;
-}
-
-
-.address{
-
-    font-family:Arial,sans-serif;
-
-    font-size:17px;
-
-    line-height:1.8;
-
-    color:#ffeaca;
-
-    margin:
-    15px auto 22px;
-}
-
-
-/* =====================================================
-   INVITATION MESSAGE
-===================================================== */
-
-.message{
-
-    max-width:680px;
-
-    margin:auto;
-
-    font-size:
-    clamp(
-        19px,
-        4vw,
-        26px
-    );
-
-    line-height:1.9;
-
-    color:#fff0d0;
-}
-
-
-.signature{
-
-    margin-top:28px;
-
+/* FLOATING DECORATIONS */
+.particle{
+    position:absolute;
     font-size:25px;
-
-    color:#ffd477;
-
-    font-weight:bold;
+    opacity:.75;
+    animation:float 7s infinite ease-in-out;
+    pointer-events:none;
 }
 
+.p1{top:15%;left:7%;}
+.p2{top:35%;right:6%;animation-delay:1s;}
+.p3{bottom:23%;left:9%;animation-delay:2s;}
+.p4{bottom:15%;right:10%;animation-delay:3s;}
+.p5{top:60%;left:50%;font-size:10px;animation-delay:1.5s;}
+.p6{top:25%;left:60%;font-size:9px;animation-delay:2.5s;}
 
-/* =====================================================
-   CONTACT
-===================================================== */
+@keyframes float{
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
 
-.contact-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(2,1fr);
-
-    gap:20px;
-
-    max-width:700px;
-
-    margin:auto;
+    50%{
+        transform:translateY(-18px) rotate(8deg);
+    }
 }
 
-
-.contact-card{
-
-    padding:
-    30px 15px;
-
-    border-radius:25px;
-
-    background:
-    rgba(255,255,255,.09);
-
-    border:
-    1px solid
-    rgba(255,218,145,.3);
-
-    backdrop-filter:
-    blur(8px);
+/* PROGRESS BAR */
+.progress{
+    position:absolute;
+    top:0;
+    left:0;
+    height:4px;
+    background:#d99b32;
+    width:16.66%;
+    transition:.5s;
+    z-index:50;
 }
 
-
-.contact-icon{
-
-    font-size:45px;
-
-    margin-bottom:10px;
-}
-
-
-.contact-card h3{
-
-    font-size:24px;
-
-    color:#ffe1a0;
-}
-
-
-.contact-card p{
-
-    font-family:Arial,sans-serif;
-
+/* PAGE COUNTER */
+.counter{
+    position:absolute;
+    top:25px;
+    left:22px;
+    color:#d9a23d;
+    letter-spacing:3px;
     font-size:14px;
-
-    color:#e9c98d;
-
-    margin-bottom:12px;
+    z-index:50;
 }
 
-
-/* =====================================================
-   SHARE
-===================================================== */
-
-.share-text{
-
-    margin-top:25px;
-
-    font-family:Arial,sans-serif;
-
-    font-size:14px;
-
-    color:#e6c58b;
-
-    line-height:1.7;
-}
-
-
-/* =====================================================
-   TOP CONTROLS
-===================================================== */
-
-.controls{
-
-    position:fixed;
-
-    top:18px;
-
+/* MUSIC BUTTON */
+.music-btn{
+    position:absolute;
     right:18px;
-
-    z-index:1000;
-
-    display:flex;
-
-    gap:8px;
-}
-
-
-.control-btn{
-
-    width:45px;
-
-    height:45px;
-
+    top:18px;
+    width:52px;
+    height:52px;
     border-radius:50%;
-
-    border:
-    1px solid
-    rgba(255,220,150,.4);
-
-    background:
-    rgba(40,18,3,.65);
-
-    color:#ffe3a2;
-
+    border:1px solid #79511a;
+    background:rgba(90,45,0,.55);
+    color:#fff;
+    font-size:22px;
     cursor:pointer;
-
-    font-size:19px;
-
-    backdrop-filter:
-    blur(8px);
-
+    z-index:60;
     transition:.3s;
 }
 
-
-.control-btn:hover{
-
+.music-btn:hover{
     transform:scale(1.08);
 }
 
-
-/* =====================================================
-   SCREEN COUNTER
-===================================================== */
-
-.counter{
-
-    position:fixed;
-
-    top:28px;
-
-    left:22px;
-
-    z-index:1000;
-
-    font-family:Arial,sans-serif;
-
-    font-size:12px;
-
-    letter-spacing:2px;
-
-    color:#e8c47a;
-}
-
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-.navigation{
-
-    position:fixed;
-
-    bottom:25px;
-
-    left:50%;
-
-    transform:
-    translateX(-50%);
-
-    z-index:1000;
-
-    display:flex;
-
-    gap:12px;
-
+/* SCREENS */
+.screen{
+    position:absolute;
+    inset:0;
+    display:none;
     align-items:center;
-
     justify-content:center;
-
-    width:100%;
-
-    pointer-events:none;
+    padding:70px 25px 110px;
+    text-align:center;
+    overflow-y:auto;
 }
 
+.screen.active{
+    display:flex;
+    animation:screenIn .8s ease;
+}
 
-.navigation button{
+@keyframes screenIn{
+    from{
+        opacity:0;
+        transform:scale(1.03) translateY(15px);
+    }
 
-    pointer-events:auto;
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
 
-    border:none;
+.content{
+    width:min(720px,100%);
+    margin:auto;
+}
 
-    cursor:pointer;
+.small-title{
+    color:#dba441;
+    font-size:14px;
+    letter-spacing:6px;
+    margin-bottom:25px;
+    text-transform:uppercase;
+}
 
-    padding:
-    12px 22px;
+h1{
+    font-size:clamp(40px,8vw,75px);
+    line-height:1.05;
+    color:#fff1c8;
+}
 
-    border-radius:50px;
+h2{
+    font-size:clamp(34px,7vw,60px);
+    color:#ffe8b0;
+    margin-bottom:30px;
+}
 
+.subtitle{
+    font-size:19px;
+    line-height:1.7;
+    color:#e5cfa5;
+    margin:20px auto;
+    max-width:600px;
+}
+
+.gold-line{
+    width:120px;
+    height:2px;
+    background:#d89a30;
+    margin:22px auto 35px;
+}
+
+/* PAGE 1 */
+.family-symbol{
+    font-size:60px;
+    margin-bottom:18px;
+}
+
+.family-name{
+    font-size:clamp(42px,9vw,76px);
+    color:#f7d58b;
+    margin:15px 0;
+}
+
+.from{
+    color:#d7ad68;
+    letter-spacing:4px;
+    font-size:14px;
+}
+
+/* PAGE 2 */
+.om{
+    font-size:75px;
+    margin-bottom:20px;
+}
+
+.invitation-text{
+    font-size:22px;
+    line-height:1.8;
+    color:#f2dfb9;
+}
+
+.invite-name{
+    margin-top:30px;
+    color:#e1a43a;
+    font-size:24px;
+}
+
+/* CUSTOM CALENDAR */
+.calendar{
+    width:130px;
+    height:140px;
+    margin:0 auto 25px;
+    border-radius:16px;
+    overflow:hidden;
+    background:#fff;
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+    border:3px solid #eee;
+}
+
+.calendar-top{
+    height:42px;
+    background:#d94b38;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
     font-family:Arial,sans-serif;
-
     font-weight:bold;
-
-    color:#fff1d0;
-
-    background:
-    rgba(50,22,3,.72);
-
-    border:
-    1px solid
-    rgba(255,220,150,.35);
-
-    backdrop-filter:
-    blur(8px);
-
-    transition:.3s;
+    font-size:19px;
 }
 
-
-.navigation button:hover{
-
-    background:
-    rgba(125,62,7,.9);
-
-    transform:
-    translateY(-3px);
+.calendar-body{
+    height:95px;
+    color:#180000;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:Arial,sans-serif;
+    font-weight:bold;
+    font-size:55px;
 }
 
-
-.navigation .next{
-
-    background:
-    linear-gradient(
-        135deg,
-        #d99b31,
-        #8d4d0b
-    );
-
-    color:#fff;
+/* EVENT CARDS */
+.event-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:18px;
 }
 
+.event-card{
+    border:1px solid rgba(220,160,50,.35);
+    border-radius:24px;
+    padding:30px 20px;
+    background:rgba(40,0,0,.35);
+    backdrop-filter:blur(5px);
+}
 
-/* =====================================================
-   PROGRESS BAR
-===================================================== */
+.event-icon{
+    font-size:55px;
+    margin-bottom:18px;
+}
 
-.progress{
+.event-label{
+    color:#dca13c;
+    font-size:17px;
+    margin-bottom:12px;
+    letter-spacing:1px;
+}
 
-    position:fixed;
+.event-value{
+    font-size:24px;
+    line-height:1.5;
+}
 
-    top:0;
+/* COUNTDOWN */
+.count-title{
+    color:#dba441;
+    letter-spacing:5px;
+    font-size:14px;
+    margin-top:35px;
+    margin-bottom:20px;
+}
+
+.countdown{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    max-width:500px;
+    margin:auto;
+}
+
+.count-box{
+    border:1px solid rgba(210,155,55,.35);
+    border-radius:16px;
+    padding:15px 5px;
+    background:rgba(40,0,0,.4);
+}
+
+.count-number{
+    font-family:Arial,sans-serif;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.count-label{
+    color:#a98b5c;
+    font-size:11px;
+    margin-top:5px;
+}
+
+/* LOCATION */
+.address{
+    font-size:20px;
+    line-height:1.8;
+    color:#ead6ae;
+    margin:20px auto 25px;
+}
+
+.map-btn,
+.phone-btn,
+.whatsapp-btn{
+    display:inline-block;
+    text-decoration:none;
+    border:none;
+    padding:15px 24px;
+    border-radius:30px;
+    margin:6px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.map-btn{
+    background:#d4962f;
+    color:#250d00;
+}
+
+.phone-btn{
+    background:#fff0c8;
+    color:#3b1600;
+}
+
+.whatsapp-btn{
+    background:#25d366;
+    color:white;
+}
+
+/* CONTACTS */
+.contact-card{
+    border:1px solid rgba(220,160,50,.3);
+    padding:22px;
+    border-radius:22px;
+    margin:15px auto;
+    max-width:500px;
+    background:rgba(50,0,0,.3);
+}
+
+.contact-name{
+    color:#f0c56b;
+    font-size:23px;
+    margin-bottom:12px;
+}
+
+/* FINAL PAGE */
+.final-heart{
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+.final-message{
+    font-size:22px;
+    line-height:1.8;
+    color:#e9d5aa;
+}
+
+/* SHARE */
+.share-area{
+    margin-top:30px;
+}
+
+.share-main{
+    display:inline-block;
+    padding:16px 28px;
+    border-radius:30px;
+    background:#25d366;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* NAVIGATION */
+.navigation{
+    position:absolute;
+    bottom:25px;
     left:0;
-
-    height:3px;
-
-    background:#ffd269;
-
-    width:16.66%;
-
-    z-index:2000;
-
-    transition:
-    width .5s ease;
+    right:0;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    z-index:55;
 }
 
+.nav-btn{
+    border:1px solid rgba(220,160,50,.4);
+    background:linear-gradient(135deg,#70420d,#9c570b);
+    color:#fff3d0;
+    padding:14px 28px;
+    border-radius:30px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
 
-/* =====================================================
-   MOBILE
-===================================================== */
+.nav-btn:active{
+    transform:scale(.96);
+}
 
+.nav-btn:disabled{
+    opacity:.35;
+}
+
+/* MOBILE */
 @media(max-width:600px){
 
     .screen{
-
-        padding:
-        50px 16px 100px;
+        padding:70px 18px 105px;
     }
 
-
-    .event-grid{
-
-        grid-template-columns:1fr;
+    .subtitle{
+        font-size:17px;
     }
 
-
-    .contact-grid{
-
-        grid-template-columns:1fr;
+    .invitation-text{
+        font-size:19px;
     }
 
-
-    .event-card{
-
-        padding:
-        20px 12px;
+    .event-value{
+        font-size:21px;
     }
 
-
-    .count-box{
-
-        min-width:70px;
+    .calendar{
+        width:115px;
+        height:125px;
     }
 
-
-    .count-box strong{
-
-        font-size:22px;
+    .calendar-top{
+        height:38px;
+        font-size:17px;
     }
 
+    .calendar-body{
+        height:84px;
+        font-size:48px;
+    }
+
+    .count-number{
+        font-size:25px;
+    }
 
     .navigation{
-
-        bottom:15px;
+        bottom:18px;
     }
 
-
-    .navigation button{
-
-        padding:
-        11px 17px;
-
-        font-size:13px;
+    .nav-btn{
+        padding:12px 22px;
     }
-
-
-    .controls{
-
-        top:12px;
-
-        right:12px;
-    }
-
-
-    .counter{
-
-        top:25px;
-
-        left:15px;
-    }
-
-
-    .address{
-
-        font-size:15px;
-    }
-
 }
-
-
-/* =====================================================
-   SMALL PHONES
-===================================================== */
-
-@media(max-width:380px){
-
-    .navigation button{
-
-        padding:
-        10px 13px;
-
-        font-size:12px;
-    }
-
-
-    .count-box{
-
-        min-width:62px;
-    }
-
-}
-
 </style>
-
 </head>
-
 
 <body>
 
+<div class="app">
 
-<div class="stage">
+<!-- PROGRESS -->
+<div class="progress" id="progress"></div>
 
+<!-- PAGE NUMBER -->
+<div class="counter" id="counter">1 / 6</div>
 
-<!-- =====================================================
-     FLOATING PARTICLES
-===================================================== -->
-
-<div class="particle"
-style="left:5%;animation-duration:12s;"></div>
-
-<div class="particle"
-style="left:15%;animation-duration:15s;animation-delay:2s;"></div>
-
-<div class="particle"
-style="left:27%;animation-duration:11s;animation-delay:4s;"></div>
-
-<div class="particle"
-style="left:39%;animation-duration:17s;animation-delay:1s;"></div>
-
-<div class="particle"
-style="left:51%;animation-duration:13s;animation-delay:3s;"></div>
-
-<div class="particle"
-style="left:63%;animation-duration:16s;animation-delay:5s;"></div>
-
-<div class="particle"
-style="left:76%;animation-duration:12s;animation-delay:2s;"></div>
-
-<div class="particle"
-style="left:88%;animation-duration:18s;animation-delay:6s;"></div>
-
-
-<!-- =====================================================
-     FLOATING FLOWERS
-===================================================== -->
-
-<div class="flower"
-style="left:6%;top:18%;">
-🌸
-</div>
-
-<div class="flower"
-style="right:7%;top:27%;animation-delay:2s;">
-🪷
-</div>
-
-<div class="flower"
-style="left:10%;bottom:22%;animation-delay:1s;">
-🌼
-</div>
-
-<div class="flower"
-style="right:10%;bottom:18%;animation-delay:3s;">
-🌸
-</div>
-
-
-<!-- =====================================================
-     PROGRESS BAR
-===================================================== -->
-
-<div
-class="progress"
-id="progress">
-</div>
-
-
-<!-- =====================================================
-     SCREEN COUNTER
-===================================================== -->
-
-<div
-class="counter"
-id="counter">
-
-1 / 6
-
-</div>
-
-
-<!-- =====================================================
-     BACKGROUND MUSIC
-===================================================== -->
-
-<audio
-id="backgroundMusic"
-loop
-preload="auto">
-
-<source
-src="music.mp3"
-type="audio/mpeg">
-
-</audio>
-
-
-<!-- =====================================================
-     MUSIC BUTTON
-===================================================== -->
-
-<div class="controls">
-
+<!-- MUSIC BUTTON -->
 <button
-class="control-btn"
-id="musicButton"
-onclick="toggleMusic()"
-title="Music">
-
-🔇
-
+    class="music-btn"
+    id="musicBtn"
+    onclick="toggleMusic()"
+    aria-label="Toggle music">
+    🔇
 </button>
 
+<!-- DECORATIONS -->
+<div class="particle p1">🌸</div>
+<div class="particle p2">🌸</div>
+<div class="particle p3">🌼</div>
+<div class="particle p4">🌸</div>
+<div class="particle p5">✦</div>
+<div class="particle p6">•</div>
+
+
+<!-- =========================================
+     SCREEN 1 — CHOLLETI FAMILY
+========================================= -->
+
+<section class="screen active">
+
+<div class="content">
+
+<div class="small-title">
+An Auspicious Beginning
 </div>
 
-
-<!-- =====================================================
-     SCREEN 1
-     CHOLLETI FAMILY
-===================================================== -->
-
-<section
-class="screen active"
-id="screen1">
-
-<div class="screen-content">
-
-
-<div class="diya">
-🪔
+<div class="family-symbol">
+🏡
 </div>
 
-
-<div class="kicker">
-
-With the Blessings of God & Elders
-
+<div class="from">
+WITH LOVE FROM
 </div>
-
 
 <div class="family-name">
-
 Cholleti Family
-
 </div>
 
-
-<div class="ornament">
-
-<span></span>
-
-<b>✦</b>
-
-<span></span>
-
-</div>
-
+<div class="gold-line"></div>
 
 <div class="subtitle">
-
-Warmly invites you and your family
-to celebrate a beautiful new beginning
-with us.
-
+With the blessings of God and our elders,
+we invite you to celebrate a beautiful
+new beginning with us.
 </div>
-
-
-<button
-class="btn primary"
-onclick="nextScreen()">
-
-✨ Begin Invitation
-
-</button>
-
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     SCREEN 2
-     GRUHAPRAVESHAM
-===================================================== -->
+<!-- =========================================
+     SCREEN 2 — GRUHAPRAVESAM
+========================================= -->
 
-<section
-class="screen"
-id="screen2">
+<section class="screen">
 
-<div class="screen-content">
+<div class="content">
 
-
-<div class="gruhapravesham-symbol">
-
-🏡
-
+<div class="small-title">
+You Are Cordially Invited
 </div>
 
-
-<div class="kicker">
-
-An Auspicious Beginning
-
+<div class="om">
+ॐ
 </div>
-
-
-<h1>
-
-Gruhapravesham
-
-</h1>
-
-
-<div class="ornament">
-
-<span></span>
-
-<b>🪔</b>
-
-<span></span>
-
-</div>
-
-
-<div class="subtitle">
-
-With happiness in our hearts,
-we invite you to bless our new home
-and share this memorable occasion
-with us.
-
-</div>
-
-
-<div class="date-line">
-
-30 AUGUST 2026
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     SCREEN 3
-     EVENT DETAILS
-===================================================== -->
-
-<section
-class="screen"
-id="screen3">
-
-<div class="screen-content">
-
-
-<div class="kicker">
-
-Save The Date
-
-</div>
-
 
 <h2>
-
-Event Details
-
+Gruhapravesham
 </h2>
 
+<div class="gold-line"></div>
+
+<div class="invitation-text">
+We warmly invite you and your family
+to join us on the auspicious occasion
+of our Gruhapravesham ceremony.
+</div>
+
+<div class="invite-name">
+Cholleti Omprakash & Shivani
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+     SCREEN 3 — EVENT DETAILS
+========================================= -->
+
+<section class="screen">
+
+<div class="content">
+
+<div class="small-title">
+Save The Date
+</div>
+
+<h2>
+Event Details
+</h2>
+
+<div class="gold-line"></div>
 
 <div class="event-grid">
 
+<!-- DATE -->
 
 <div class="event-card">
 
-<div class="event-icon">
+<div class="calendar">
 
-📅
+<div class="calendar-top">
+AUGUST
+</div>
+
+<div class="calendar-body">
+30
+</div>
 
 </div>
 
-<strong>
+<div class="event-label">
+DATE
+</div>
 
-Sunday
-
-</strong>
-
-<span>
-
+<div class="event-value">
+Sunday<br>
 30 August 2026
-
-</span>
+</div>
 
 </div>
 
+
+<!-- TIME -->
 
 <div class="event-card">
 
 <div class="event-icon">
-
 ⏰
-
 </div>
 
-<strong>
+<div class="event-label">
+TIME
+</div>
 
+<div class="event-value">
 8:00 AM onwards
+</div>
 
-</strong>
-
-<span>
-
+<div style="margin-top:8px;color:#b89b68;">
 Gruhapravesham Ceremony
+</div>
 
-</span>
+</div>
 
 </div>
 
 
+<!-- COUNTDOWN -->
+
+<div class="count-title">
+OUR SPECIAL DAY BEGINS IN
 </div>
-
-
-<div class="countdown-title">
-
-Our Special Day Begins In
-
-</div>
-
 
 <div class="countdown">
 
+<div class="count-box">
+<div class="count-number" id="days">00</div>
+<div class="count-label">DAYS</div>
+</div>
 
 <div class="count-box">
-
-<strong id="days">
-
-0
-
-</strong>
-
-<span>
-
-Days
-
-</span>
-
+<div class="count-number" id="hours">00</div>
+<div class="count-label">HOURS</div>
 </div>
-
 
 <div class="count-box">
-
-<strong id="hours">
-
-0
-
-</strong>
-
-<span>
-
-Hours
-
-</span>
-
+<div class="count-number" id="minutes">00</div>
+<div class="count-label">MINUTES</div>
 </div>
-
 
 <div class="count-box">
-
-<strong id="minutes">
-
-0
-
-</strong>
-
-<span>
-
-Minutes
-
-</span>
-
+<div class="count-number" id="seconds">00</div>
+<div class="count-label">SECONDS</div>
 </div>
 
-
-<div class="count-box">
-
-<strong id="seconds">
-
-0
-
-</strong>
-
-<span>
-
-Seconds
-
-</span>
-
 </div>
-
-
-</div>
-
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     SCREEN 4
-     LOCATION
-===================================================== -->
+<!-- =========================================
+     SCREEN 4 — VENUE
+========================================= -->
 
-<section
-class="screen"
-id="screen4">
+<section class="screen">
 
-<div class="screen-content">
+<div class="content">
 
-
-<div class="location-icon">
-
-📍
-
+<div class="small-title">
+We Would Love To See You
 </div>
-
-
-<div class="kicker">
-
-You Are Invited To
-
-</div>
-
 
 <h2>
-
-Our New Home
-
+Venue
 </h2>
 
+<div class="gold-line"></div>
 
-<div class="location-box">
+<div class="event-card">
 
-
-<h3>
-
-Event Location
-
-</h3>
-
+<div class="event-icon">
+📍
+</div>
 
 <div class="address">
 
-Surya Colony,
+<strong>
+Surya Colony
+</strong>
 
 <br>
 
-Hayathnagar_Khalsa,
+Hayathnagar_Khalsa
 
 <br>
 
-Hathiguda,
+Hathiguda
 
 <br>
 
@@ -1749,174 +739,54 @@ Telangana - 501505
 
 </div>
 
-
 <a
-
+class="map-btn"
 href="https://maps.app.goo.gl/4P8bEPNTdbJ8EzFS8?g_st=aw"
+target="_blank">
 
-target="_blank"
-
-rel="noopener noreferrer"
-
-class="btn maps">
-
-🗺️ Open Google Maps
+📍 Open Google Maps
 
 </a>
 
-
 </div>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     SCREEN 5
-     INVITATION MESSAGE
-===================================================== -->
-
-<section
-class="screen"
-id="screen5">
-
-<div class="screen-content">
-
-
-<div class="diya">
-
-🪔
-
-</div>
-
-
-<div class="kicker">
-
-A Heartfelt Invitation
-
-</div>
-
-
-<h2>
-
-Your Presence Matters
-
-</h2>
-
-
-<div class="ornament">
-
-<span></span>
-
-<b>🪷</b>
-
-<span></span>
-
-</div>
-
-
-<div class="message">
-
-We would be delighted to have you
-and your family join us on this
-auspicious occasion.
-
-
-<br><br>
-
-
-Your presence and blessings will make
-our celebration even more special
-and memorable.
-
-
-<div class="signature">
-
-“Your presence is our greatest blessing.”
-
-</div>
-
-
-<div class="signature">
-
-With Love & Warm Regards ❤️
-
-<br>
-
-Cholleti Omprakash & Shivani
-
-</div>
-
-
-</div>
-
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     SCREEN 6
-     CONTACT & SHARE
-===================================================== -->
+<!-- =========================================
+     SCREEN 5 — CONTACT
+========================================= -->
 
-<section
-class="screen"
-id="screen6">
+<section class="screen">
 
-<div class="screen-content">
+<div class="content">
 
-
-<div class="kicker">
-
-We Look Forward To Seeing You
-
+<div class="small-title">
+For Any Assistance
 </div>
 
-
 <h2>
-
-Contact Us
-
+Contact
 </h2>
 
-
-<div class="contact-grid">
+<div class="gold-line"></div>
 
 
 <!-- OM PRAKASH -->
 
 <div class="contact-card">
 
-<div class="contact-icon">
-
-📞
-
+<div class="contact-name">
+Cholleti Omprakash
 </div>
 
-
-<h3>
-
-Cholleti Omprakash
-
-</h3>
-
-
-<p>
-
-For any information
-
-</p>
-
-
 <a
-href="tel:9848405645"
-class="btn call">
+class="phone-btn"
+href="tel:9848405645">
 
-📱 Call Omprakash
+📞 Call
 
 </a>
 
@@ -1927,462 +797,290 @@ class="btn call">
 
 <div class="contact-card">
 
-<div class="contact-icon">
-
-📞
-
+<div class="contact-name">
+Bunny
 </div>
 
-
-<h3>
-
-Bunny
-
-</h3>
-
-
-<p>
-
-For any information
-
-</p>
-
-
 <a
-href="tel:6303869086"
-class="btn call">
+class="phone-btn"
+href="tel:6303869086">
 
-📱 Call Bunny
+📞 Call
 
 </a>
 
 </div>
-
-
-</div>
-
-
-<div class="share-text">
-
-Share this invitation with your
-family and friends.
-
-<br>
-
-Only the website link will be shared
-on WhatsApp.
-
-</div>
-
-
-<button
-class="btn whatsapp"
-onclick="shareWhatsApp()">
-
-💚 Share Invitation on WhatsApp
-
-</button>
-
-
-<button
-class="btn secondary"
-onclick="copyLink()">
-
-🔗 Copy Invitation Link
-
-</button>
-
-
-<div
-style="
-margin-top:25px;
-color:#ffd477;
-font-size:20px;">
-
-🪔 Thank You 🪔
-
-</div>
-
 
 </div>
 
 </section>
 
 
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+<!-- =========================================
+     SCREEN 6 — FINAL
+========================================= -->
+
+<section class="screen">
+
+<div class="content">
+
+<div class="small-title">
+With Love
+</div>
+
+<div class="final-heart">
+🙏
+</div>
+
+<h2>
+See You There
+</h2>
+
+<div class="gold-line"></div>
+
+<div class="final-message">
+
+Your presence and blessings
+will make our celebration
+even more memorable.
+
+</div>
+
+<div class="invite-name">
+Cholleti Omprakash & Shivani
+</div>
+
+
+<!-- WHATSAPP -->
+
+<div class="share-area">
+
+<a
+class="share-main"
+href="https://wa.me/?text=Gruhapravesham%20Invitation%20-%20https%3A%2F%2Fumasathwik.github.io%2Fhouse-warming-invitation%2F"
+target="_blank">
+
+💚 Share on WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- NAVIGATION -->
 
 <div class="navigation">
 
-
 <button
-id="backButton"
+class="nav-btn"
+id="backBtn"
 onclick="previousScreen()">
 
 ← Back
 
 </button>
 
-
 <button
-class="next"
-id="nextButton"
+class="nav-btn"
+id="nextBtn"
 onclick="nextScreen()">
 
 Next →
 
 </button>
 
-
 </div>
-
 
 </div>
 
 
 <script>
 
-/* =====================================================
-   SCREEN SYSTEM
-===================================================== */
+/* =========================================
+   SCREEN NAVIGATION
+========================================= */
 
-let currentScreen = 1;
+let currentScreen = 0;
 
-const totalScreens = 6;
+const screens =
+document.querySelectorAll(".screen");
 
-let autoTimer;
+const progress =
+document.getElementById("progress");
+
+const counter =
+document.getElementById("counter");
+
+const backBtn =
+document.getElementById("backBtn");
+
+const nextBtn =
+document.getElementById("nextBtn");
 
 
-/* =====================================================
-   SHOW SCREEN
-===================================================== */
+function showScreen(index){
 
-function showScreen(number){
-
-    if(number < 1){
-
-        number = 1;
-
+    if(index < 0){
+        index = 0;
     }
 
-
-    if(number > totalScreens){
-
-        number = totalScreens;
-
+    if(index >= screens.length){
+        index = screens.length - 1;
     }
 
+    screens.forEach((screen,i)=>{
 
-    currentScreen = number;
-
-
-    document
-    .querySelectorAll(".screen")
-    .forEach(function(screen){
-
-        screen.classList.remove(
-            "active"
+        screen.classList.toggle(
+            "active",
+            i === index
         );
 
     });
 
+    currentScreen = index;
 
-    document
-    .getElementById(
-        "screen" + number
-    )
-    .classList.add(
-        "active"
-    );
+    counter.textContent =
+        `${index + 1} / ${screens.length}`;
 
+    progress.style.width =
+        `${((index + 1) / screens.length) * 100}%`;
 
-    document
-    .getElementById(
-        "counter"
-    )
-    .innerText =
-        number + " / " +
-        totalScreens;
+    backBtn.disabled =
+        index === 0;
 
-
-    document
-    .getElementById(
-        "progress"
-    )
-    .style.width =
-        ((number / totalScreens) * 100)
-        + "%";
-
-
-    const backButton =
-        document.getElementById(
-            "backButton"
-        );
-
-
-    const nextButton =
-        document.getElementById(
-            "nextButton"
-        );
-
-
-    if(number === 1){
-
-        backButton.style.visibility =
-            "hidden";
-
-    }
-
-    else{
-
-        backButton.style.visibility =
-            "visible";
-
-    }
-
-
-    if(number === totalScreens){
-
-        nextButton.innerText =
-            "↻ Start Again";
-
-    }
-
-    else{
-
-        nextButton.innerText =
-            "Next →";
-
-    }
-
-
-    resetAutoTimer();
-
+    nextBtn.disabled =
+        index === screens.length - 1;
 }
 
-
-/* =====================================================
-   NEXT SCREEN
-===================================================== */
 
 function nextScreen(){
 
-    if(
-        currentScreen ===
-        totalScreens
-    ){
+    if(currentScreen < screens.length - 1){
 
-        showScreen(1);
-
-    }
-
-    else{
-
-        showScreen(
-            currentScreen + 1
-        );
+        showScreen(currentScreen + 1);
 
     }
 
 }
 
-
-/* =====================================================
-   PREVIOUS SCREEN
-===================================================== */
 
 function previousScreen(){
 
-    if(currentScreen > 1){
+    if(currentScreen > 0){
 
-        showScreen(
-            currentScreen - 1
-        );
+        showScreen(currentScreen - 1);
 
     }
 
 }
 
 
-/* =====================================================
-   AUTOMATIC SCREEN CHANGE
-===================================================== */
+/* =========================================
+   KEYBOARD
+========================================= */
 
-function resetAutoTimer(){
+document.addEventListener("keydown",(event)=>{
 
-    clearTimeout(
-        autoTimer
-    );
+    if(event.key === "ArrowRight"){
+        nextScreen();
+    }
 
+    if(event.key === "ArrowLeft"){
+        previousScreen();
+    }
 
-    autoTimer =
-        setTimeout(
-            function(){
-
-                nextScreen();
-
-            },
-            9000
-        );
-
-}
+});
 
 
-resetAutoTimer();
-
-
-/* =====================================================
+/* =========================================
    COUNTDOWN
-===================================================== */
+========================================= */
 
 const eventDate =
-    new Date(
-        "August 30, 2026 08:00:00"
-    ).getTime();
+new Date("August 30, 2026 08:00:00").getTime();
 
 
 function updateCountdown(){
 
     const now =
-        new Date().getTime();
-
+    new Date().getTime();
 
     const difference =
-        eventDate - now;
+    eventDate - now;
 
 
     if(difference <= 0){
 
-        document.getElementById(
-            "days"
-        ).innerText = "0";
+        document.getElementById("days").textContent = "00";
 
+        document.getElementById("hours").textContent = "00";
 
-        document.getElementById(
-            "hours"
-        ).innerText = "0";
+        document.getElementById("minutes").textContent = "00";
 
-
-        document.getElementById(
-            "minutes"
-        ).innerText = "0";
-
-
-        document.getElementById(
-            "seconds"
-        ).innerText = "0";
-
+        document.getElementById("seconds").textContent = "00";
 
         return;
-
     }
 
 
     const days =
-        Math.floor(
-            difference /
-            (
-                1000 *
-                60 *
-                60 *
-                24
-            )
-        );
+    Math.floor(
+        difference /
+        (1000 * 60 * 60 * 24)
+    );
 
 
     const hours =
-        Math.floor(
-            (
-                difference %
-                (
-                    1000 *
-                    60 *
-                    60 *
-                    24
-                )
-            )
-            /
-            (
-                1000 *
-                60 *
-                60
-            )
-        );
+    Math.floor(
+        (difference %
+        (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+    );
 
 
     const minutes =
-        Math.floor(
-            (
-                difference %
-                (
-                    1000 *
-                    60 *
-                    60
-                )
-            )
-            /
-            (
-                1000 *
-                60
-            )
-        );
+    Math.floor(
+        (difference %
+        (1000 * 60 * 60)) /
+        (1000 * 60)
+    );
 
 
     const seconds =
-        Math.floor(
-            (
-                difference %
-                (
-                    1000 *
-                    60
-                )
-            )
-            /
-            1000
-        );
+    Math.floor(
+        (difference %
+        (1000 * 60)) /
+        1000
+    );
 
 
-    document.getElementById(
-        "days"
-    ).innerText =
-        days;
+    document.getElementById("days")
+        .textContent =
+        String(days).padStart(2,"0");
 
 
-    document.getElementById(
-        "hours"
-    ).innerText =
-        String(hours)
-        .padStart(
-            2,
-            "0"
-        );
+    document.getElementById("hours")
+        .textContent =
+        String(hours).padStart(2,"0");
 
 
-    document.getElementById(
-        "minutes"
-    ).innerText =
-        String(minutes)
-        .padStart(
-            2,
-            "0"
-        );
+    document.getElementById("minutes")
+        .textContent =
+        String(minutes).padStart(2,"0");
 
 
-    document.getElementById(
-        "seconds"
-    ).innerText =
-        String(seconds)
-        .padStart(
-            2,
-            "0"
-        );
+    document.getElementById("seconds")
+        .textContent =
+        String(seconds).padStart(2,"0");
 
 }
 
 
 updateCountdown();
-
 
 setInterval(
     updateCountdown,
@@ -2390,44 +1088,56 @@ setInterval(
 );
 
 
-/* =====================================================
-   MUSIC
-===================================================== */
+/* =========================================
+   BACKGROUND MUSIC
+========================================= */
 
-const music =
-    document.getElementById(
-        "backgroundMusic"
-    );
+/*
+   IMPORTANT:
+
+   Put music.mp3 in the SAME GitHub
+   repository/folder as index.html.
+
+   Repository:
+
+   house-warming-invitation/
+
+       index.html
+       music.mp3
+*/
 
 
-const musicButton =
-    document.getElementById(
-        "musicButton"
-    );
+let musicOn = false;
 
+const audio =
+new Audio("music.mp3");
 
-let musicPlaying = false;
+audio.loop = true;
+
+/* Volume from 0.0 to 1.0 */
+audio.volume = 0.5;
 
 
 function toggleMusic(){
 
-    if(!musicPlaying){
+    const button =
+    document.getElementById("musicBtn");
 
-        music.play()
 
-        .then(function(){
+    if(!musicOn){
 
-            musicPlaying = true;
+        audio.play()
+        .then(()=>{
 
-            musicButton.innerText =
-                "🔊";
+            musicOn = true;
+
+            button.textContent = "🔊";
 
         })
-
-        .catch(function(){
+        .catch(()=>{
 
             alert(
-                "Please make sure music.mp3 is in the same folder as index.html."
+                "Please tap the music button again to start the music."
             );
 
         });
@@ -2436,170 +1146,51 @@ function toggleMusic(){
 
     else{
 
-        music.pause();
+        audio.pause();
 
-        musicPlaying = false;
+        musicOn = false;
 
-        musicButton.innerText =
-            "🔇";
-
-    }
-
-}
-
-
-/* =====================================================
-   WHATSAPP SHARE
-===================================================== */
-
-function shareWhatsApp(){
-
-    const invitationLink =
-        window.location.href;
-
-
-    const whatsappURL =
-        "https://wa.me/?text=" +
-        encodeURIComponent(
-            invitationLink
-        );
-
-
-    window.open(
-        whatsappURL,
-        "_blank"
-    );
-
-}
-
-
-/* =====================================================
-   COPY INVITATION LINK
-===================================================== */
-
-async function copyLink(){
-
-    const invitationLink =
-        window.location.href;
-
-
-    try{
-
-        await navigator
-        .clipboard
-        .writeText(
-            invitationLink
-        );
-
-
-        alert(
-            "Invitation link copied successfully! 🎉"
-        );
-
-    }
-
-    catch(error){
-
-        prompt(
-            "Copy this invitation link:",
-            invitationLink
-        );
+        button.textContent = "🔇";
 
     }
 
 }
 
 
-/* =====================================================
-   KEYBOARD NAVIGATION
-===================================================== */
+/* =========================================
+   AUTO PAGE TRANSITION
+========================================= */
 
-document.addEventListener(
-    "keydown",
-    function(event){
+let autoPlay = true;
 
-        if(
-            event.key ===
-            "ArrowRight"
-        ){
+setInterval(()=>{
 
-            nextScreen();
+    if(!autoPlay){
+        return;
+    }
 
-        }
+    if(currentScreen < screens.length - 1){
 
-
-        if(
-            event.key ===
-            "ArrowLeft"
-        ){
-
-            previousScreen();
-
-        }
+        nextScreen();
 
     }
-);
 
+    else{
 
-/* =====================================================
-   MOBILE SWIPE
-===================================================== */
-
-let touchStartX = 0;
-
-let touchEndX = 0;
-
-
-document.addEventListener(
-    "touchstart",
-    function(event){
-
-        touchStartX =
-            event.changedTouches[0]
-            .screenX;
+        showScreen(0);
 
     }
-);
+
+},10000);
 
 
-document.addEventListener(
-    "touchend",
-    function(event){
+/* =========================================
+   START
+========================================= */
 
-        touchEndX =
-            event.changedTouches[0]
-            .screenX;
-
-
-        const difference =
-            touchEndX -
-            touchStartX;
-
-
-        if(
-            Math.abs(difference)
-            > 60
-        ){
-
-            if(difference < 0){
-
-                nextScreen();
-
-            }
-
-            else{
-
-                previousScreen();
-
-            }
-
-        }
-
-    }
-);
+showScreen(0);
 
 </script>
 
 </body>
-
 </html>
